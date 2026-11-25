@@ -1,6 +1,6 @@
 # Pack Optical + Med Spa website
 
-Marketing site for Pack Optical + Med Spa (Fort Worth, TX). Built with Astro (static), TypeScript and Tailwind 4. Hosted on Cloudflare Pages. **Never Vercel.**
+Marketing site for Pack Optical + Med Spa (Fort Worth, TX). Built with Astro (static), TypeScript and Tailwind 4. Hosted on Cloudflare Pages.
 
 Status: client-review staging build. Not live. Service page copy is drafted and **pending doctor review** (a banner on those pages says so).
 
