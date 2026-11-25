@@ -42,7 +42,7 @@ export function reply(input: string, now: Date = new Date()): Reply {
   if (/(price|cost|how much|fee|offer|discount|special|deal)/.test(t))
     return { text: 'Current offers: Packs Unlimited kids plan at $99 a year, 15% off sunglasses and 10% senior discount on frames and sunglasses. Exam and treatment prices are quoted up front, and aesthetics include an exact written quote first.', links: [{ label: 'Offers', href: '/offers/' }, tel] };
   if (/(book|appoint|schedule|exam|see a doctor|visit)/.test(t) || t === 'book')
-    return { text: 'You can request an appointment online in about a minute. Choose a service and a preferred day, and our office will call to confirm. Please do not share health details in the form.', links: [book, tel] };
+    return { text: 'You can book online: eye care appointments through Weave, med spa appointments through Moxie. Or send a request on our Book page and our office will call to confirm. Please do not share health details in the form.', links: [{ label: 'Book eye care (Weave)', href: SITE.weaveUrl }, { label: 'Book med spa (Moxie)', href: SITE.moxieUrl }, book] };
   if (/(phone|call|number|contact|email|fax)/.test(t))
     return { text: `Phone: ${SITE.phone}. Email: ${SITE.email}. ${hoursText(now)}`, links: [tel, { label: 'Email the office', href: `mailto:${SITE.email}` }] };
   return { text: `I can help with hours, directions, services, insurance, offers and booking. For anything else, or for medical questions, please call ${SITE.phone}.`, links: [tel, book] };

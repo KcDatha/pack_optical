@@ -6,6 +6,7 @@ import { crumbs } from '../lib/schema';
 import { INSURANCE_OPTIONS, FACE_SHAPES } from '../lib/tools';
 import { TOPICS } from '../lib/forms';
 import Turnstile from '../components/Turnstile.astro';
+import SmsConsent from '../components/SmsConsent.astro';
 const items = [{ name: 'Home', href: '/' }, { name: 'Patient Centre', href: '/patient-centre/' }];
 ---
 <Base title="Patient Centre | Insurance, Eye Quiz & Frame Finder | Pack" description="Check your insurance, take the 60-second dry eye quiz, find frames for your face shape and prepare for your first visit at Pack Optical, Fort Worth." path="/patient-centre/" schema={crumbs(items)}>
@@ -44,6 +45,7 @@ const items = [{ name: 'Home', href: '/' }, { name: 'Patient Centre', href: '/pa
 <div class="field full"><label for="cMsg">Message *</label><textarea id="cMsg" name="message" required></textarea><p class="err" data-err="message" hidden></p></div>
 <div class="field" style="position:absolute;left:-9999px" aria-hidden="true"><label for="cWeb">Website</label><input id="cWeb" name="website" tabindex="-1" autocomplete="off" /></div>
 </div>
+<SmsConsent id="smsConsentContact" />
 <div style="margin-top:12px"><Turnstile /></div>
 <p class="err" data-status role="alert" style="display:block;min-height:1em"></p>
 <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button type="submit" class="btn btn-teal" data-label="Send message">Send message</button></div>

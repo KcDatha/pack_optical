@@ -93,3 +93,33 @@ Fixes made by the gate: footer link tap targets (accessibility), moved font load
 ### Deferred to the post-share list
 Sanity CMS switch-on, doctor approval of the 11 service pages (banner removal), final privacy/terms text, area pages, per-page OG images, /review/ page, Phase 10 launch (301 redirects from content/old-urls.csv, DNS, Search Console, Business Profile), Firefox test pass, Dr. Presente photo, aggregateRating in schema after live verification, GA4.
 Client message and open items note: docs/open-items-for-client.md (share message text is in 4_DAY_SPRINT.md).
+
+## Gap fixes 2026-11-25
+Source of the gaps: comparison of this build (localhost:4321) against the live site. Evidence for the aesthetics content: content/wp-services-raw.json (11 live service pages) and content/wp-pages-raw.json (live pages), pulled from the WordPress REST API.
+
+Before and after (grep counts in src/data/services.ts and src/pages/book.astro):
+| Term | Before | After |
+| --- | --- | --- |
+| Diolaze (services.ts) | 0 | 0 in services.ts; on the built aesthetics page via new src/data/aesthetics.ts (own section heading plus 2 gallery photos) |
+| Lumecca (services.ts) | 0 | same, own section heading plus 2 gallery photos |
+| weaveUrl (book.astro) | 0 | 1 use on the Book panel, via SITE |
+| moxieUrl (book.astro) | 0 | 1 use on the Book panel, via SITE |
+Forma was 2 in services.ts before (the brief said 3); Morpheus8 6, Botox 2 as stated.
+
+- Task 1 booking: done. /book/ now opens with Book with Weave (eye care) and Book with Moxie (med spa) from the SITE constants, new tab, rel noopener; request form kept below ("If you prefer, send a request and our office will call you back"). Aesthetics page main CTA = Moxie; every eye care service page main CTA = Weave (the emergency page keeps Call, by design); each has "or send a request instead" to /book/. Chat names both. SITE.moxieUrl upgraded from http to https (checked: HTTP 200). The live site itself uses the same Weave and Moxie links, confirmed in its aesthetics page source.
+- Task 2 aesthetics: done. Sections for Morpheus8, Lumecca, Forma, Diolaze plus Define face contouring (a fifth treatment the live page lists). Text shortened from the live page; nothing added except the neutral line "Individual results vary." under the gallery. 8 real before and after photos from the live page (docs/aesthetics-image-report.md), all under 200 KB. The live page text never names "Forma" in the skin tightening paragraph; the name comes from the live gallery image, a live blog article and the demo.
+- Task 3 SMS consent: done. Exact text on /book/ (under the booking panel and under the request form), under the contact form on /patient-centre/, and in the body of /privacy/. Tested word for word in Playwright against the exact string.
+- Task 4 team: done. Dr. Presente's card is now a text-only card, no initials block. No photo was drawn or fetched.
+- Task 5 rating: done. RATING_VERIFIED flag (default false) in src/data/site.ts; practiceSchema() adds aggregateRating only when true; unit-tested both ways; the production build ships false.
+- Task 6 staging pack: done (prepared only, nothing deployed). docs/staging-deploy.md has all six steps; the build guard warns loudly on a production build with no Turnstile key or a Cloudflare test key (verified: warns with no key and with the test key, silent with a real-looking key, silent on a staging build).
+
+Launch checklist (new): on launch day verify the current Google rating and review count on the live Business Profile, update `rating` in src/data/site.ts, then set RATING_VERIFIED to true.
+
+### Regression gate (one run of scripts/gate.sh against the production build, served by scripts/serve-dist.mjs)
+build 62 pages (61 content pages plus 404.html, same as Day 4), astro check 0 errors, lint clean, Vitest 37/37, Playwright 368 passed and 16 skipped by design (mobile-only tests on desktop projects, desktop-only keyboard tests on mobile and WebKit), links 0 broken of 3,396, SEO suite 0 failures, content audit clear, facts check 0 issues, CSP clean on 7 pages.
+Lighthouse mobile (1 run each), Performance / Accessibility / Best Practices / SEO: home 98/100/100/100, dry eye 100/100/100/100, aesthetics 100/100/100/100, blog index 100/100/100/100, book 100/100/100/100.
+
+### Problems found in the process itself
+- A first gate run scored /book/ SEO 92 and failed 52 Playwright tests. Cause: a leftover local dev server was still on port 4321, so the checks hit the dev server. The 92 was Lighthouse audit `link-text` (1 link, "Learn more" to docs.astro.build), injected only by the Astro dev toolbar; reproduced against the dev server. The production build contains zero docs.astro.build links.
+- Newer Astro runs `astro preview` and `astro dev` as background daemons, which made Playwright think its server exited. Tests and Lighthouse now use scripts/serve-dist.mjs.
+- Gap tasks 1 to 6 were verified together in the final gate run and committed in one commit, not task by task.

@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Turnstile from '../components/Turnstile.astro';
+import SmsConsent from '../components/SmsConsent.astro';
 import { SITE } from '../data/site';
 import { crumbs } from '../lib/schema';
 import { SERVICE_OPTIONS, DAYS, TIMES } from '../lib/forms';
@@ -10,9 +11,21 @@ const groups = ['Eye care', 'Med spa'];
 ---
 <Base title="Book an Eye Exam Fort Worth | Request an Appointment" description="Request an eye exam or med spa appointment at Pack Optical in Fort Worth, TX. Tell us your service and preferred day and our office will call to confirm." path="/book/" schema={crumbs(items)}>
 <div class="wrap"><Breadcrumbs items={items} />
-<div class="page-head"><p class="eyebrow">Request an appointment</p><h1>Request an eye care or med spa appointment</h1><p class="lead">Choose a service and a preferred day. This is a request, not a confirmed booking: our office will call you to confirm a time. For anything urgent, call <a href={`tel:${SITE.phoneTel}`}><b>{SITE.phone}</b></a>.</p></div>
-<section class="block" style="padding-top:12px">
-<div class="booking-shell"><div class="booking-head"><h2 style="font-size:23px;margin:0;color:#fff">Request an appointment</h2></div>
+<div class="page-head"><p class="eyebrow">Book an appointment</p><h1>Book eye care or med spa online</h1><p class="lead">Choose the type of appointment below and book directly with our scheduling partner. Prefer a call back? Send a request further down and our office will phone you. For anything urgent, call <a href={`tel:${SITE.phoneTel}`}><b>{SITE.phone}</b></a>.</p></div>
+<section class="block" style="padding-top:12px" aria-labelledby="bookChoiceTitle">
+<h2 class="title" id="bookChoiceTitle" style="font-size:26px;margin-top:0">Choose your appointment</h2>
+<div class="split" id="bookChoice">
+  <div class="card"><h3 style="font-size:22px;margin:0 0 6px">Eye care appointments</h3><p class="note" style="margin:0 0 14px">Eye exams, children's and diabetic exams, contact lens fittings, dry eye and urgent concerns.</p>
+    <a class="btn btn-teal" id="bookWeave" href={SITE.weaveUrl} target="_blank" rel="noopener">Book with Weave</a></div>
+  <div class="card"><h3 style="font-size:22px;margin:0 0 6px">Med spa appointments</h3><p class="note" style="margin:0 0 14px">Morpheus8, Lumecca IPL, Forma skin tightening, face contouring and Diolaze laser hair removal.</p>
+    <a class="btn btn-gold" id="bookMoxie" href={SITE.moxieUrl} target="_blank" rel="noopener">Book with Moxie</a></div>
+</div>
+<p class="note" style="margin-top:12px">Both buttons open our scheduling partner in a new tab. Eye emergency? Call <a href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a> instead of booking online.</p>
+<SmsConsent id="smsConsentPanel" />
+</section>
+<section class="block" style="padding-top:0" aria-labelledby="reqTitle">
+<p class="lead" style="margin-bottom:14px">If you prefer, send a request and our office will call you back.</p>
+<div class="booking-shell"><div class="booking-head"><h2 id="reqTitle" style="font-size:23px;margin:0;color:#fff">Request an appointment</h2></div>
 <div class="booking-body">
 <form id="requestForm" novalidate aria-describedby="privacyNote">
   <div class="form-grid">
@@ -27,7 +40,8 @@ const groups = ['Eye care', 'Med spa'];
     <div class="field"><label for="patientType">Are you a… *</label><select id="patientType" name="patientType"><option>New patient / client</option><option>Existing patient / client</option></select></div>
     <div class="field" style="position:absolute;left:-9999px" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off" /></div>
   </div>
-  <p class="note" id="privacyNote" style="margin:14px 0"><b>Please do not enter health details, insurance numbers or dates of birth here.</b> We will gather anything clinical by phone or in person. By sending this you agree to a call or text about your request. See our <a href="/privacy/">privacy policy</a>.</p>
+  <p class="note" id="privacyNote" style="margin:14px 0 0"><b>Please do not enter health details, insurance numbers or dates of birth here.</b> We will gather anything clinical by phone or in person. See our <a href="/privacy/">privacy policy</a>.</p>
+  <SmsConsent id="smsConsentForm" />
   <Turnstile />
   <p class="err" data-status role="alert" style="display:block;min-height:1em"></p>
   <div class="booking-nav"><span class="note">Walk-ins welcome during office hours.</span><button type="submit" class="btn btn-teal" data-label="Send request">Send request</button></div>

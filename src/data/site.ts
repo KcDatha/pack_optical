@@ -9,12 +9,15 @@ export const SITE = {
   fax: '682-647-3909',
   email: 'office@packoptical.com',
   rating: { value: '4.8', count: 441 },
+  // Launch checklist: verify the live Google rating and review count, update `rating` above, then set this to true.
+  // While false, aggregateRating is NOT emitted in schema (the numbers still show as text from the demo).
+  RATING_VERIFIED: false,
   founded: 1951,
   hoursShort: 'Mon/Tue/Thu 7:30 AM–5:30 PM · Wed 8:30 AM–5:30 PM · Fri–Sun Closed',
   contactsOrderUrl: 'https://packoptical.myclstore.com/Order/Welcome?aN=135061',
   frameSelectorUrl: 'https://www.myframeboard.com/9398-8ALH',
   weaveUrl: 'https://book2.getweave.com/a333a485-8706-412a-b7c2-d467515b9221/request-appointment?source=WEBSITE',
-  moxieUrl: 'http://app.joinmoxie.com/booking/pack-medspa',
+  moxieUrl: 'https://app.joinmoxie.com/booking/pack-medspa',
   mapsUrl:
     'https://www.google.com/maps/place/Pack+Optical/@32.7784497,-97.2812538,15z/data=!4m6!3m5!1s0x864e774c9e08ca43:0x7e5d2d85b47ecb1d!8m2!3d32.7789075!4d-97.2812537!16s%2Fg%2F1tj21z0m?entry=ttu',
   facebook: 'https://www.facebook.com/PackOpticalmedspa',

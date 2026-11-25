@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { SITE } from '../../src/data/site';
 
 // The Pages Function is not served by `astro preview`, so the API is mocked here.
 // The server logic itself (validation, Turnstile, Resend, auto reply) is covered by tests/unit/forms.test.ts.
@@ -65,4 +66,31 @@ test('book and call buttons work: tel link correct on every page', async ({ page
     expect(hrefs.length).toBeGreaterThan(0); hrefs.forEach((h) => expect(h).toBe('tel:+18178316141'));
     await expect(page.locator('header a[href="/book/"]').first()).toBeVisible();
   }
+});
+
+test('Book page shows both booking buttons with the SITE constant URLs', async ({ page }) => {
+  await page.goto('/book/');
+  const weave = page.locator('#bookChoice a', { hasText: 'Book with Weave' });
+  const moxie = page.locator('#bookChoice a', { hasText: 'Book with Moxie' });
+  await expect(weave).toHaveAttribute('href', SITE.weaveUrl); await expect(moxie).toHaveAttribute('href', SITE.moxieUrl);
+  for (const l of [weave, moxie]) { await expect(l).toHaveAttribute('target', '_blank'); await expect(l).toHaveAttribute('rel', /noopener/); }
+  await expect(page.getByText('If you prefer, send a request and our office will call you back.')).toBeVisible();
+});
+
+test('aesthetics page main CTA goes to Moxie, eye care pages to Weave, both with a request fallback', async ({ page }) => {
+  await page.goto('/services/aesthetics-med-spa/');
+  await expect(page.locator('[data-main-cta]')).toHaveAttribute('href', SITE.moxieUrl);
+  await expect(page.locator('.info-box a[href="/book/"]')).toContainText('send a request instead');
+  for (const s of ['dry-eye-treatment', 'comprehensive-eye-exams', 'childrens-eye-exams']) {
+    await page.goto(`/services/${s}/`);
+    await expect(page.locator('[data-main-cta]')).toHaveAttribute('href', SITE.weaveUrl);
+    await expect(page.locator('.info-box a[href="/book/"]')).toContainText('send a request instead');
+  }
+});
+
+test('header, hero and mobile bar Book buttons still go to /book/', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('header a.btn-gold')).toHaveAttribute('href', '/book/');
+  await expect(page.locator('.hero-ctas a.btn-gold')).toHaveAttribute('href', '/book/');
+  await expect(page.locator('.mobile-bar a.mb-book')).toHaveAttribute('href', '/book/');
 });

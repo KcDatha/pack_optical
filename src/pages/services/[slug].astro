@@ -6,11 +6,16 @@ import ReviewStrip from '../../components/ReviewStrip.astro';
 import { SITE } from '../../data/site';
 import { services, relatedLinks } from '../../data/services';
 import { faqSchema, crumbs, serviceSchema } from '../../lib/schema';
+import { Image } from 'astro:assets';
+import { treatments, modernApproach, gallery } from '../../data/aesthetics';
 
 export function getStaticPaths() { return services.map((s) => ({ params: { slug: s.slug }, props: { s } })); }
 const { s } = Astro.props;
+const showTreatments = s.key === 'aesthetics';
 const path = `/services/${s.slug}/`;
 const rel = relatedLinks(s);
+// Med spa books through Moxie, every eye care service through Weave (same split as the live site).
+const bookHref = s.key === 'aesthetics' ? SITE.moxieUrl : SITE.weaveUrl;
 const items = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: s.hubTitle, href: path }];
 ---
 <Base title={s.title} description={s.description} path={path} reviewPending
@@ -21,6 +26,14 @@ const items = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services
   <div class="svc-layout"><div class="svc-main">
     <h2 class="title">What it is</h2>
     {s.what.map((p) => <p class="sub" style="margin-bottom:12px">{p}</p>)}
+    {showTreatments && <>
+      <h2 class="title">Our aesthetic treatments in Fort Worth</h2>
+      <p class="sub" style="margin-bottom:12px">{modernApproach}</p>
+      {treatments.map((t) => <section aria-labelledby={`t-${t.id}`} style="margin-bottom:14px"><h3 id={`t-${t.id}`} style="font-size:21px;margin:0 0 4px">{t.name}</h3><p class="note" style="margin:0 0 6px">{t.liveHeading}</p><p class="sub" style="margin:0">{t.text}</p></section>)}
+      <h2 class="title" id="results">See the results</h2>
+      <p class="note" style="margin:0 0 12px">Before and after photos from Pack Optical + Med Spa, as shown on our current website. Individual results vary.</p>
+      <div class="ba-gallery">{gallery.map((g) => <figure class="ba-fig"><Image src={g.src} alt={g.alt} widths={[480, 900]} sizes="(max-width:700px) 100vw, 420px" loading="lazy" /><figcaption>{g.caption}</figcaption></figure>)}</div>
+    </>}
     <h2 class="title">Who it's for</h2>
     <ul class="checks">{s.who.map((x) => <li>{x}</li>)}</ul>
     <h2 class="title">What happens at your appointment</h2>
@@ -41,8 +54,9 @@ const items = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services
   <aside class="info-box"><h3>{s.emergency ? 'Call us now' : 'Book this service'}</h3>
     <p class="note" style="margin:0 0 14px">{s.hubTitle} — request your visit in under a minute.</p>
     {s.emergency
-      ? <a class="btn btn-teal" style="width:100%" href={`tel:${SITE.phoneTel}`}>Call {SITE.phone}</a>
-      : <a class="btn btn-teal" style="width:100%" href="/book/">{s.bookLabel}</a>}
+      ? <a class="btn btn-teal" style="width:100%" data-main-cta href={`tel:${SITE.phoneTel}`}>Call {SITE.phone}</a>
+      : <a class="btn btn-teal" style="width:100%" data-main-cta href={bookHref} target="_blank" rel="noopener">{s.bookLabel}</a>}
+    {!s.emergency && <p class="note" style="margin:10px 0 0;text-align:center">or <a href="/book/">send a request instead</a></p>}
     <p class="note" style="margin:12px 0 0">{SITE.addressLine}<br /><a href={`tel:${SITE.phoneTel}`}><b>{SITE.phone}</b></a><br />Mon/Tue/Thu 7:30–5:30 · Wed 8:30–5:30</p>
     <hr style="border:0;border-top:1px solid var(--line);margin:16px 0" />
     <p class="note" style="margin:0"><b>Related:</b> {rel.map((r, i) => <><a href={r.href}>{r.label}</a>{i < rel.length - 1 ? ' · ' : ''}</>)} · <a href="/visit/">Visit</a></p>

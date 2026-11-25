@@ -1,0 +1,5 @@
+---
+import { SMS_CONSENT } from '../data/consent';
+const { id } = Astro.props as { id?: string };
+---
+<p class="note sms-consent" id={id} data-sms-consent style="margin:12px 0">{SMS_CONSENT}</p>

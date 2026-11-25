@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { SITE } from '../data/site';
+import { practiceSchema } from '../lib/schema';
 import { allPosts } from '../lib/blog';
 const posts = await allPosts();
 import hero1 from '../assets/hero-1.webp';
@@ -21,19 +22,7 @@ const reviews = [
   ['After my Morpheus8 treatments my skin is smoother, softer and more radiant — I get compliments constantly.', 'Google review · Heena K., Med Spa'],
 ];
 const hours = [['Monday','7:30 AM – 5:30 PM',1],['Tuesday','7:30 AM – 5:30 PM',2],['Wednesday','8:30 AM – 5:30 PM',3],['Thursday','7:30 AM – 5:30 PM',4],['Friday','Closed',5],['Saturday','Closed',6],['Sunday','Closed',0]];
-const schema = {
-  '@context': 'https://schema.org', '@type': 'Optometrist', '@id': `${SITE.url}/#practice`,
-  name: SITE.name, url: `${SITE.url}/`, telephone: '+1-817-831-6141', faxNumber: '+1-682-647-3909', email: SITE.email,
-  foundingDate: '1951', priceRange: '$$',
-  address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: 'Fort Worth', addressRegion: 'TX', postalCode: SITE.address.zip, addressCountry: 'US' },
-  geo: { '@type': 'GeoCoordinates', latitude: 32.7789075, longitude: -97.2812537 },
-  hasMap: SITE.mapsUrl,
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Thursday'], opens: '07:30', closes: '17:30' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '08:30', closes: '17:30' },
-  ],
-  sameAs: [SITE.facebook, SITE.instagram], areaServed: SITE.areas,
-};
+const schema = practiceSchema();
 ---
 <Base title={title} description={description} path="/" schema={schema}>
 <section class="hero">
