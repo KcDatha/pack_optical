@@ -84,7 +84,7 @@ Full results in docs/qa-log.md. Summary: lint, astro check, 32 unit tests, 320 P
 Fixes made by the gate: footer link tap targets (accessibility), moved font loading and the chat greeting off inline scripts so a strict CSP works (no `unsafe-inline` for scripts), US spellings, added CSP + security headers (`public/_headers`), staging build with noindex meta and `X-Robots-Tag` header (`npm run build:staging`, `npm run check:staging`), `deploy:staging` script, Lighthouse CI config with the 95/95/95/100 gate.
 
 ### NOT DONE, blocked outside the codebase (so the share has NOT happened)
-1. Firefox could not be tested on this Mac (Playwright's Firefox does not launch on macOS 27.2). WebKit and Chromium engines pass.
+1. Firefox skipped by Guru's decision (DEC-20251125-002); it could not be tested on this Mac (Playwright's Firefox does not launch on macOS 27.2). WebKit and Chromium engines pass.
 2. Staging was NOT deployed. wrangler is not logged in, and there is no client-owned Cloudflare Pages project or credentials. Steps: docs/staging-deploy.md. I did not use a temporary/anonymous Cloudflare account because that would publish the client site outside the client's account.
 3. Real email delivery and live Turnstile are untested (no Resend/Turnstile credentials). Forms use the Cloudflare TEST site key until PUBLIC_TURNSTILE_SITEKEY is set.
 4. Response headers on the real pages.dev URL, Rich Results Test, real-phone check and Guru's walkthrough all need the live staging URL.

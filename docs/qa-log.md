@@ -6,7 +6,7 @@
 | npm run build / astro check / eslint | pass, 62 pages, 0 errors, lint clean |
 | Vitest unit tests | 32/32 pass (quiz, frame guide, insurance, hours, forms, server handler, chat) |
 | Playwright, Chromium + WebKit (desktop Safari engine) + Pixel 7 + iPhone 14 | 320 pass, 0 fail, 16 skipped by design (mobile-only / desktop-only tests) |
-| Playwright, Firefox | NOT RUN. Playwright's Firefox build will not launch on this Mac (macOS 27.2). Run `PW_FIREFOX=1 npm run test:e2e -- --project=firefox` on another machine or CI. |
+| Playwright, Firefox | SKIPPED by Guru's decision (DEC-20251125-002). NOT RUN. Playwright's Firefox build will not launch on this Mac (macOS 27.2). Run `PW_FIREFOX=1 npm run test:e2e -- --project=firefox` on another machine or CI. |
 | axe (critical + serious) | 0 violations, 13 templates x light and dark, desktop and mobile engines |
 | Keyboard pass (home, service, blog, book) | pass on Chromium: skip link first, focus ring on every focusable element, no trap |
 | Reduced motion, light/dark | pass |

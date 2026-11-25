@@ -38,3 +38,13 @@ Reasoning: One pipeline reused by all pages; no risk of indexing staging.
 Impact: Day 4 staging deploy must set the flag; production must not.
 Reference: 4_DAY_SPRINT.md Day 1, Day 4
 Follow-up: Verify flag state on Day 4.
+
+## [2026-11-25] DECISION Skip Firefox testing for the sprint share
+ID: DEC-20251125-002
+Status: Confirmed
+Context: BUILD_PLAN Phase 7 and the Day 4 gate list Firefox. Playwright's Firefox build does not launch on the dev Mac (macOS 27.2), so Firefox was never run.
+Decision or Finding: Guru decided to skip Firefox for now. Chromium, WebKit (Safari engine), Pixel 7 and iPhone 14 all pass.
+Reasoning: Tooling limit on this machine, low risk (standard HTML/CSS/JS, no browser-specific code).
+Impact: Firefox is untested at share time. Re-run before launch if possible: PW_FIREFOX=1 npm run test:e2e -- --project=firefox (another machine or CI).
+Reference: docs/qa-log.md, PROGRESS.md Day 4
+Follow-up: Optional Firefox pass before Phase 10 launch.
