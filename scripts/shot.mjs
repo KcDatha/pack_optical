@@ -1,0 +1,11 @@
+import { chromium, devices } from '@playwright/test';
+const [,, url, out, mode='mobile', scheme='light'] = process.argv;
+const b = await chromium.launch();
+const ctx = await b.newContext(mode==='mobile' ? {...devices['Pixel 7'], colorScheme: scheme, reducedMotion:'reduce'} : {viewport:{width:1280,height:900}, colorScheme: scheme, reducedMotion:'reduce'});
+const p = await ctx.newPage();
+const errs=[]; p.on('console',m=>{if(m.type()==='error')errs.push(m.text())}); p.on('pageerror',e=>errs.push(String(e)));
+await p.goto(url,{waitUntil:'networkidle'});
+await p.screenshot({path:out,fullPage:true});
+const sw=await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+console.log('hscroll:',sw,'errors:',errs);
+await b.close();

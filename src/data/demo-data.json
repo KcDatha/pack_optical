@@ -1,0 +1,1151 @@
+{
+ "META": {
+  "home": {
+   "t": "Optometrist in Fort Worth, TX | Pack Optical + Med Spa — Eye Exams, Dry Eye Clinic & Aesthetics Since 1951",
+   "d": "Pack Optical + Med Spa — family-owned optometrist in Fort Worth, TX since 1951. Eye exams, Dry Eye Center of Excellence (IPL & RF), contacts, diabetic exams, emergency care, 300+ frames & Morpheus8 at 1217 Oak Knoll Drive. Call 817-831-6141.",
+   "u": "https://packoptical.com/"
+  },
+  "practice": {
+   "t": "Our Practice & Team | Pack Optical + Med Spa, Fort Worth, TX",
+   "d": "Family-owned since 1951, third generation. Meet Dr. Alisha Poonawala, OD, Dr. Asaf Presente, MD, Yanet and Maddy at Pack Optical, 1217 Oak Knoll Drive, Fort Worth. Values, team and insurance accepted.",
+   "u": "https://packoptical.com/our-practice/"
+  },
+  "services": {
+   "t": "Eye Care & Med Spa Services | Pack Optical, Fort Worth, TX",
+   "d": "All Pack Optical services on one index: adult & senior, children's and diabetic eye exams, contact lenses, dry eye therapy, IPL, emergency care, eye disease, laser consultation and aesthetics in Fort Worth.",
+   "u": "https://packoptical.com/services/"
+  },
+  "eyewear": {
+   "t": "Eyewear, Frames & Lenses — 20 Brands | Pack Optical, Fort Worth",
+   "d": "300+ frames from 20 brands — Ray-Ban, Oakley, Gucci, Prada, Michael Kors and more — plus Essilor Varilux & Crizal lenses, 15% off sunglasses and 10% senior discount at Pack Optical, Fort Worth.",
+   "u": "https://packoptical.com/brands/frames-lenses/"
+  },
+  "blog": {
+   "t": "Eye Health Blog — 39 Articles | Pack Optical, Fort Worth, TX",
+   "d": "Straight answers from the Pack Optical team: dry eye, Ortho-K, glaucoma, cataracts, myopia, Morpheus8 and more. 39 articles from the Pack Optical team, searchable by topic.",
+   "u": "https://packoptical.com/blog/"
+  },
+  "patient": {
+   "t": "Patient Centre — Insurance Checker, Dry Eye Quiz & Frame Finder | Pack Optical",
+   "d": "Check your insurance (VSP, EyeMed, BCBS, Aetna, Cigna, Medicare), take the 60-second dry eye quiz, find frames for your face shape and prepare for your first visit at Pack Optical, Fort Worth.",
+   "u": "https://packoptical.com/patient-centre/"
+  },
+  "visit": {
+   "t": "Location, Hours & Directions | Pack Optical, 1217 Oak Knoll Dr, Fort Worth",
+   "d": "Pack Optical + Med Spa, 1217 Oak Knoll Drive, Fort Worth, TX 76117. Hours Mon/Tue/Thu 7:30–5:30, Wed 8:30–5:30, Fri–Sun closed. Directions from downtown, Keller, Saginaw and North Richland Hills. Call 817-831-6141.",
+   "u": "https://packoptical.com/location/our-location/"
+  },
+  "offers": {
+   "t": "Offers — $99 Packs Unlimited, 15% Off Sunglasses | Pack Optical, Fort Worth",
+   "d": "Real Pack Optical offers: Packs Unlimited kids plan $99/year with $25 frame & lens sets and $25 replacements, 15% off sunglasses, 10% senior discount on frames & sunglasses.",
+   "u": "https://packoptical.com/offers/"
+  },
+  "book": {
+   "t": "Book an Appointment | Pack Optical + Med Spa, Fort Worth, TX",
+   "d": "Book eye care or med spa in one flow at Pack Optical, Fort Worth. Eye exams, dry eye, contacts, kids, Morpheus8, Botox, IPL and Forma. Open Mon–Thu. Call 817-831-6141.",
+   "u": "https://packoptical.com/book/"
+  },
+  "legal": {
+   "t": "Privacy Policy, Terms (Texas Law) & Sitemap | Pack Optical, Fort Worth",
+   "d": "Pack Optical accessibility statement, single privacy policy, Texas-law terms and conditions, and a full sitemap of every page, service and blog article.",
+   "u": "https://packoptical.com/sitemap/"
+  }
+ },
+ "SP": {
+  "adult-senior": {
+   "crumb": "Adult & Senior Eye Exams",
+   "eye": "Eye Exams · 30–60 minutes",
+   "h1": "Adult & Senior Eye Exams in Fort Worth",
+   "intro": "A thorough, unhurried exam — vision, eye health, retinal imaging and refraction — with every finding explained as we go.",
+   "what": "Your vision changes as you age. A Pack exam covers vision assessment, eye health evaluation, digital retinal imaging (Optomap) and refraction — and takes the time it takes, up to a full hour.",
+   "who": [
+    "Adults due for an annual exam",
+    "Seniors 60+ (annual exams recommended)",
+    "Anyone noticing blur, glare or night-driving trouble",
+    "Patients who want findings explained, not rushed"
+   ],
+   "expect": [
+    "Before: bring insurance card, medication list and current glasses",
+    "During: full testing with findings explained as we go",
+    "After: a clear plan, your prescription, and referrals if a specialist is needed",
+    "Seniors: 10% discount on frames & sunglasses"
+   ],
+   "acc": [
+    [
+     "What we test for",
+     "Cataracts · Glaucoma · Macular degeneration · Diabetic retinopathy · Dry eye · Refractive errors — caught early, when treatment works best."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "exam"
+   },
+   "rel": [
+    [
+     "Children's exams",
+     "childrens"
+    ],
+    [
+     "Diabetic exams",
+     "diabetic"
+    ]
+   ]
+  },
+  "childrens": {
+   "crumb": "Children's Eye Exams",
+   "eye": "Eye Exams · Kids",
+   "h1": "Children's Eye Exams in Fort Worth",
+   "intro": "80% of learning is visual — and 1 in 4 school-age children has a vision problem. Gentle exams, honest answers, and a kids' plan that covers breakages.",
+   "what": "We follow the AOA schedule: first exam at 6–12 months, again at 3–5 years, then annually before 1st grade and every year after. We test visual acuity, eye alignment, tracking & focusing, colour vision, depth perception and eye health.",
+   "who": [
+    "Babies 6–12 months (first check)",
+    "Children 3–5 and school-age, annually",
+    "Kids who squint, sit close, lose their place reading or rub their eyes",
+    "Families who want myopia control options"
+   ],
+   "expect": [
+    "A patient, gentle exam at your child's pace",
+    "Clear report of what we found and what it means",
+    "Packs Unlimited: $99/year — unlimited exams, $25 frame & lens sets, $25 replacements, same-day pickup",
+    "Myopia management: Ortho-K, atropine, multifocal contacts and MiSight; vision therapy referrals"
+   ],
+   "acc": [
+    [
+     "Signs to book sooner",
+     "Squinting · Headaches · Sitting close to the TV · Losing place while reading · Rubbing eyes · Avoiding reading."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "kids"
+   },
+   "rel": [
+    [
+     "Adult & senior exams",
+     "adult-senior"
+    ],
+    [
+     "Contact lenses",
+     "contacts"
+    ]
+   ]
+  },
+  "diabetic": {
+   "crumb": "Diabetic Eye Exams",
+   "eye": "Medical Eye Care",
+   "h1": "Diabetic Eye Exams in Fort Worth",
+   "intro": "Diabetes can quietly damage the retina. An annual dilated exam catches changes while they're still manageable — and we share the report with your care team.",
+   "what": "Diabetes can cause diabetic retinopathy, diabetic macular edema, cataracts and glaucoma. Retinopathy is a leading cause of vision loss in adults 20–74, progressing from mild non-proliferative stages to proliferative disease.",
+   "who": [
+    "Type 1 & type 2 diabetes — annually",
+    "Longer diabetes duration or blood sugar / BP concerns",
+    "Pregnancy with diabetes",
+    "High cholesterol alongside diabetes"
+   ],
+   "expect": [
+    "Annual dilated exam with digital retinal imaging and OCT",
+    "Staging explained in plain language",
+    "Report shared with your primary care doctor / endocrinologist",
+    "Risk plan: blood sugar, BP and cholesterol control; don't smoke"
+   ],
+   "acc": [
+    [
+     "Why annual matters",
+     "Early retinopathy has no symptoms. The exam is the warning system — by the time vision changes, damage is harder to reverse."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "diabetic"
+   },
+   "rel": [
+    [
+     "Eye disease care",
+     "eye-disease"
+    ],
+    [
+     "Adult exams",
+     "adult-senior"
+    ]
+   ]
+  },
+  "contacts": {
+   "crumb": "Contact Lens Exams, Fittings & Brands",
+   "eye": "Contact Lenses",
+   "h1": "Contact Lens Exams & Fittings in Fort Worth",
+   "intro": "A contact lens prescription is different from a glasses prescription. Precise fitting, trial lenses and training — daily, toric, multifocal, scleral and Ortho-K.",
+   "what": "Your fitting includes corneal measurement & curvature, tear film assessment, lifestyle assessment, trial lenses and a follow-up — plus insertion/removal training if you're new to contacts.",
+   "who": [
+    "New wearers who want proper training",
+    "Astigmatism (toric) or presbyopia (multifocal)",
+    "Keratoconus or severe dry eye (scleral)",
+    "Kids/teens for Ortho-K myopia control"
+   ],
+   "expect": [
+    "Measurements, tear-film check and trial lenses",
+    "Care rules: hygiene first, never sleep in lenses unless prescribed, replace on schedule",
+    "Brands: Alcon, Acuvue, Bausch + Lomb, CooperVision and more",
+    "Reorder online anytime via Order Contacts (top of this site)"
+   ],
+   "acc": [
+    [
+     "Lens types",
+     "Daily disposable · Bi-weekly / monthly · Toric · Multifocal · RGP · Scleral · Specialty / Ortho-K overnight myopia control."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "contacts"
+   },
+   "rel": [
+    [
+     "Children's exams",
+     "childrens"
+    ],
+    [
+     "Eyewear & brands",
+     "eyewear"
+    ]
+   ]
+  },
+  "dry-eye": {
+   "crumb": "Dry Eye Therapy",
+   "eye": "Dry Eye Clinic · Center of Excellence",
+   "h1": "Dry Eye Therapy in Fort Worth — a Center of Excellence",
+   "intro": "Dry, irritated, tired eyes have a cause — and over 30 million Americans share it. We diagnose the type first, then treat the glands, not just the symptoms.",
+   "what": "Tears are made of oil, water and mucus. Dry eye is either Aqueous Deficiency (not enough tears) or Evaporative (tears evaporate too fast) — most commonly from Meibomian Gland Dysfunction (MGD), plus blepharitis and rosacea. Causes include screens, aging, air conditioning, contacts and hormones.",
+   "who": [
+    "Burning, gritty or watering eyes",
+    "Blur that clears when you blink",
+    "Drops that stopped working",
+    "Post-cataract dry eye"
+   ],
+   "expect": [
+    "Diagnosis: LipiView, LipiScan, MMP-9 / InflammaDry, tear osmolarity, Schirmer's test, meibography",
+    "Our 4-step MGD plan: 1) IPL Therapy (4 sessions) 2) Radiofrequency 3) Manual Expression 4) Regener-Eyes",
+    "Other options: BlephEx, lid hygiene, warm compresses, punctal plugs, prescription drops (Restasis, Xiidra, Cequa, Tyrvaya)",
+    "Honest guidance — treatment only if it will genuinely help"
+   ],
+   "acc": [
+    [
+     "Not sure it's dry eye?",
+     "Take the 60-second Dry Eye Quiz in the Patient Centre — five questions, scored instantly, with a plain verdict."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "dryeye"
+   },
+   "rel": [
+    [
+     "IPL treatment",
+     "ipl"
+    ],
+    [
+     "Digital eye strain",
+     "digital-strain"
+    ]
+   ]
+  },
+  "ipl": {
+   "crumb": "IPL Treatment (OptimaMAX)",
+   "eye": "Dry Eye Clinic · InMode",
+   "h1": "IPL Treatment for Dry Eye — OptimaMAX",
+   "intro": "The next generation of dry eye relief: InMode OptimaMAX combines IPL + RF to calm inflammation and restart oil flow — with a photofacial bonus for the skin around your eyes.",
+   "what": "Intense pulsed light targets the inflammation driving dry eye and the abnormal blood vessels around the glands. Light pulses reduce inflammation, address Demodex/bacteria contributors and warm blocked glands so oil flows again. Radiofrequency stimulates meibum, improves tear quality, tightens skin and softens fine lines.",
+   "who": [
+    "Evaporative dry eye / MGD",
+    "Rosacea-related dry eye",
+    "Patients whose drops no longer help",
+    "Anyone wanting the skin benefits too: spots, redness, uneven tone"
+   ],
+   "expect": [
+    "Preparation: consultation, skin assessment, protective eyewear, cooling gel",
+    "Treatment: gentle pulses around the lids, ~10–15 minutes",
+    "After: mild redness fades in hours; typically ~4 sessions spaced weeks apart",
+    "Photofacial bonus: age spots / sun damage, rosacea, acne, uneven skin tone"
+   ],
+   "acc": [
+    [
+     "IPL vs drops",
+     "Drops replace tears for a few minutes. IPL treats why the tears fail — the inflamed, blocked glands — so relief compounds across sessions."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "dryeye"
+   },
+   "rel": [
+    [
+     "Dry eye therapy",
+     "dry-eye"
+    ],
+    [
+     "Aesthetics",
+     "aesthetics"
+    ]
+   ]
+  },
+  "emergency": {
+   "crumb": "Emergency Eye Care",
+   "eye": "Same-Day · Urgent",
+   "h1": "Emergency Eye Care in Fort Worth",
+   "intro": "Eye injuries, chemical exposure, sudden vision loss, flashes & floaters, pain or infection — call immediately. Same-day appointments, walk-ins welcome.",
+   "what": "We treat corneal abrasions, foreign bodies, infections (pink eye), uveitis / iritis, retinal detachment symptoms and subconjunctival hemorrhage. Don't rub the eye, don't remove embedded objects, and flush chemicals with water for 15 minutes while you call.",
+   "who": [
+    "Sudden vision loss or a curtain over vision",
+    "Severe eye pain or trauma",
+    "Flashes, new floaters or bleeding",
+    "Chemical splash or something stuck in the eye"
+   ],
+   "expect": [
+    "Call 817-831-6141 first — we prioritise emergencies Mon–Thu",
+    "Same-day appointments and walk-ins when something can't wait",
+    "If we're closed (Fri–Sun) and it's severe: urgent care or ER, and ask them to contact us"
+   ],
+   "acc": [
+    [
+     "First aid while you call",
+     "Don't rub · Don't remove embedded objects · Flush chemicals 15 minutes with clean water · Bring any chemical container or object details with you."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "urgent"
+   },
+   "rel": [
+    [
+     "Eye disease care",
+     "eye-disease"
+    ],
+    [
+     "Visit & hours",
+     "visit"
+    ]
+   ]
+  },
+  "digital-strain": {
+   "crumb": "Digital Eye Strain",
+   "eye": "Specialty Care",
+   "h1": "Digital Eye Strain Relief in Fort Worth",
+   "intro": "Prolonged screens, reduced blinking, blue light and poor ergonomics strain your eyes. Children over 3 hours a day on screens are at higher risk.",
+   "what": "Symptoms: dry eyes, headaches, strained eyes, blurry vision, neck & shoulder pain. Most cases improve with setup changes — persistent strain deserves an exam to rule out prescription or focusing problems.",
+   "who": [
+    "Screen-heavy jobs and students",
+    "Kids on screens 3+ hours a day",
+    "Headaches that build through the workday",
+    "Blur after long screen sessions"
+   ],
+   "expect": [
+    "Ergonomics: screen 4–5 inches below eye level, 20–28 inches away",
+    "Display settings and lighting adjusted to your space",
+    "The 20-20-20 rule: every 20 minutes, look 20 feet away for 20 seconds",
+    "Blue-light glasses can help — we'll tell you honestly if they're worth it for you"
+   ],
+   "acc": [
+    [
+     "Still strained after fixes?",
+     "Book an eye exam — uncorrected prescription and focusing issues hide behind 'screen strain' more often than people expect."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "exam"
+   },
+   "rel": [
+    [
+     "Dry eye therapy",
+     "dry-eye"
+    ],
+    [
+     "Adult exams",
+     "adult-senior"
+    ]
+   ]
+  },
+  "eye-disease": {
+   "crumb": "Eye Disease Diagnosis & Management",
+   "eye": "Medical Eye Care",
+   "h1": "Eye Disease Diagnosis & Management in Fort Worth",
+   "intro": "Early detection saves sight. Glaucoma, cataracts and macular degeneration are diagnosed, staged and managed here — with specialist co-management when you need it.",
+   "what": "Glaucoma (open-angle, angle-closure, normal-tension, congenital, secondary) is diagnosed with pressure, visual field and optic nerve imaging and treated with drops, laser or surgery referral. Cataracts cause foggy vision, night difficulty, halos and faded colours; surgery is timed to when vision interferes with daily life. Macular degeneration (dry vs wet AMD) shows as blurry central vision and wavy lines; AREDS vitamins help dry AMD, anti-VEGF injections treat wet AMD via specialists.",
+   "who": [
+    "Family history of glaucoma or AMD",
+    "Age, diabetes, high eye pressure or steroid use",
+    "Foggy vision, halos or night-driving trouble",
+    "Straight lines looking wavy, or dark central spots"
+   ],
+   "expect": [
+    "Pressure, visual field and optic nerve imaging for glaucoma",
+    "Cataract assessment and honest surgery timing",
+    "AMD monitoring with imaging; specialist co-management",
+    "Prevention guidance: UV protection, no smoking, healthy diet"
+   ],
+   "acc": [
+    [
+     "Risk factors at a glance",
+     "Glaucoma: age, family history, ethnicity, high eye pressure, diabetes, steroid use. Cataracts: age, diabetes, smoking, UV, steroids. AMD: age, family history, smoking."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "diabetic"
+   },
+   "rel": [
+    [
+     "Diabetic exams",
+     "diabetic"
+    ],
+    [
+     "Adult exams",
+     "adult-senior"
+    ]
+   ]
+  },
+  "laser": {
+   "crumb": "Laser Eye Surgery Consultation",
+   "eye": "LASIK · PRK · SMILE",
+   "h1": "Laser Eye Surgery Consultation in Fort Worth",
+   "intro": "Considering LASIK, PRK or SMILE? Start here: candidacy, measurements and honest advice — then pre-op and post-op co-management back at Pack.",
+   "what": "Candidates are 18+, with a stable prescription and healthy corneas. LASIK creates a flap and reshapes the cornea with a quick recovery. PRK is surface ablation with no flap and a longer recovery — often better for thin corneas. SMILE is also discussed at consultation.",
+   "who": [
+    "18+ with a stable prescription",
+    "Tired of glasses or contacts",
+    "Thin corneas (PRK may suit better)",
+    "Anyone wanting the full risks picture first"
+   ],
+   "expect": [
+    "Consultation and measurements here at Pack",
+    "Surgeon referral for the procedure itself",
+    "Pre-op and post-op co-management back at Pack",
+    "Risks covered honestly: dry eye, halos and glare are possible; most patients achieve 20/20"
+   ],
+   "acc": [
+    [
+     "Co-management, explained",
+     "Your optometrist handles consultation, measurements and pre/post-op care while the surgeon performs the procedure — one team, start to finish."
+    ]
+   ],
+   "book": {
+    "cat": "eye",
+    "svc": "exam"
+   },
+   "rel": [
+    [
+     "Contact lenses",
+     "contacts"
+    ],
+    [
+     "Blog: LASIK guides",
+     "blog"
+    ]
+   ]
+  },
+  "aesthetics": {
+   "crumb": "Aesthetics / Med Spa",
+   "eye": "Med Spa · Spa-tometry",
+   "h1": "Aesthetics & Med Spa in Fort Worth — “Spa-tometry”",
+   "intro": "Eye care + aesthetics, redefined: the med spa inside your eye doctor's office, led by Dr. Alisha Poonawala. InMode technology for results that look refreshed, never done.",
+   "what": "Four steps, always in order: 1) Consultation — tell us your goal, skin assessment, honest advice. 2) Personalized Plan — written plan and exact quote before any treatment. 3) Treatment — by the medical team. 4) Follow-Up — we check and maintain your results, aftercare included.",
+   "who": [
+    "Fine lines, wrinkles, texture or laxity",
+    "Sun spots, redness or uneven tone",
+    "Under-eye hollowing or tired look",
+    "Unwanted hair — or just a proper glow-up plan"
+   ],
+   "expect": [
+    "Morpheus8 microneedling + RF: 3 sessions, 4–6 weeks apart; best results ~3 months after the final session",
+    "Also offered: IPL photofacial, Forma skin tightening, face contouring, Botox® & fillers, laser hair removal",
+    "Aftercare: avoid sun / heat / sauna 48–72 hrs; moisturizer and SPF",
+    "SMS: ~4 texts/month with specials; reply STOP to opt out"
+   ],
+   "acc": [
+    [
+     "Book via Moxie too",
+     "You can also book aesthetics appointments through Moxie at app.joinmoxie.com/booking/pack-medspa — or book here online."
+    ],
+    [
+     "Morpheus8 aftercare",
+     "Avoid sun, heat and sauna for 48–72 hours; keep skin moisturized and use SPF. Full guidance is given at your appointment."
+    ]
+   ],
+   "book": {
+    "cat": "spa",
+    "svc": "spaconsult"
+   },
+   "rel": [
+    [
+     "IPL treatment",
+     "ipl"
+    ],
+    [
+     "Offers",
+     "offers"
+    ]
+   ]
+  }
+ },
+ "HUB": [
+  [
+   "adult-senior",
+   "Adult & Senior Exams",
+   "30–60 min exams: vision, retinal imaging, early disease checks."
+  ],
+  [
+   "childrens",
+   "Children's Exams",
+   "Gentle kids' exams + $99 Packs Unlimited plan."
+  ],
+  [
+   "diabetic",
+   "Diabetic Eye Exams",
+   "Annual dilated exams with reports to your care team."
+  ],
+  [
+   "contacts",
+   "Contact Lenses",
+   "Fittings, training & brands — daily to scleral & Ortho-K."
+  ],
+  [
+   "dry-eye",
+   "Dry Eye Therapy",
+   "Center of Excellence: IPL & RF for the cause."
+  ],
+  [
+   "ipl",
+   "IPL Treatment",
+   "OptimaMAX IPL+RF — relief plus a photofacial bonus."
+  ],
+  [
+   "emergency",
+   "Emergency Eye Care",
+   "Same-day help for pain, injury & sudden changes."
+  ],
+  [
+   "digital-strain",
+   "Digital Eye Strain",
+   "Screen-tired eyes: setup fixes + honest exam advice."
+  ],
+  [
+   "eye-disease",
+   "Eye Disease Care",
+   "Glaucoma, cataracts & AMD — early detection saves sight."
+  ],
+  [
+   "laser",
+   "Laser Surgery Consult",
+   "LASIK, PRK & SMILE candidacy + co-management."
+  ],
+  [
+   "aesthetics",
+   "Aesthetics / Med Spa",
+   "Morpheus8, IPL, Forma, Botox® & laser — medical team."
+  ],
+  [
+   "eyewear",
+   "Eyewear & Brands",
+   "300+ frames, 20 brands, Essilor lenses."
+  ]
+ ],
+ "BRANDS": [
+  [
+   "Aspex",
+   "Magnetic clip-on sunglasses over your regular frames."
+  ],
+  [
+   "Burberry",
+   "British heritage checks and polished, classic shapes."
+  ],
+  [
+   "Coach",
+   "New York fashion frames with signature hardware."
+  ],
+  [
+   "Columbia",
+   "Outdoor-ready, durable frames built for active days."
+  ],
+  [
+   "Dilli Dalli",
+   "Flexible, kid-proof frames made for children."
+  ],
+  [
+   "Emporio Armani",
+   "Clean Italian lines — modern and understated."
+  ],
+  [
+   "Essilor",
+   "Lens technology behind Varilux® progressives & Crizal® coatings."
+  ],
+  [
+   "Guess",
+   "Bold, fashion-forward styles with a youthful edge."
+  ],
+  [
+   "GX by Gwen Stefani",
+   "Playful, expressive designs with pop-star flair."
+  ],
+  [
+   "Hackett",
+   "Refined British menswear styling in eyewear form."
+  ],
+  [
+   "Kate Spade",
+   "Cheerful colour, patterns and feminine detail."
+  ],
+  [
+   "Kliik",
+   "Canadian-designed, lightweight frames with subtle colour."
+  ],
+  [
+   "Michael Kors",
+   "Jet-set glamour — tortoise, gold and oversized shapes."
+  ],
+  [
+   "Oakley",
+   "Sport performance frames and lenses, prescription-ready."
+  ],
+  [
+   "Prada",
+   "High-fashion Italian statement frames."
+  ],
+  [
+   "Ray-Ban",
+   "Icons — Wayfarer, Aviator and Clubmaster, in prescription."
+  ],
+  [
+   "Superflex",
+   "Memory-metal flexibility that survives busy lives."
+  ],
+  [
+   "Ted Baker",
+   "Quirky British design with hidden details."
+  ],
+  [
+   "Titan Flex",
+   "Feather-light memory metal for all-day comfort."
+  ],
+  [
+   "Tory Burch",
+   "Preppy-chic frames with the signature double-T."
+  ]
+ ],
+ "SERVICES": {
+  "eye": [
+   {
+    "id": "exam",
+    "name": "Comprehensive Eye Exam",
+    "dur": 45,
+    "desc": "Full vision + eye-health check with Dr. Alisha, including retinal screening."
+   },
+   {
+    "id": "dryeye",
+    "name": "Dry Eye Consultation",
+    "dur": 40,
+    "desc": "Tear-film and gland evaluation with a personalized relief plan."
+   },
+   {
+    "id": "contacts",
+    "name": "Contact Lens Fitting",
+    "dur": 30,
+    "desc": "Precise fitting, trial lenses and wear training — daily, monthly, toric and multifocal."
+   },
+   {
+    "id": "kids",
+    "name": "Children's Eye Exam",
+    "dur": 30,
+    "desc": "Gentle exams for kids, school vision checks and the Packs Unlimited plan."
+   },
+   {
+    "id": "diabetic",
+    "name": "Diabetic Eye Exam",
+    "dur": 45,
+    "desc": "Dilated retinal exam with a report shared with your care team."
+   },
+   {
+    "id": "urgent",
+    "name": "Urgent Eye Concern",
+    "dur": 30,
+    "desc": "Red eye, sudden vision change, pain or something in the eye. If severe, call 817-831-6141."
+   },
+   {
+    "id": "frames",
+    "name": "Frame Styling Appointment",
+    "dur": 30,
+    "desc": "One-on-one help choosing designer frames that fit your face and budget."
+   }
+  ],
+  "spa": [
+   {
+    "id": "morpheus",
+    "name": "Morpheus8 Consultation",
+    "dur": 30,
+    "desc": "RF microneedling for tighter, smoother skin. Consult + exact quote."
+   },
+   {
+    "id": "botox",
+    "name": "Botox® Consultation",
+    "dur": 20,
+    "desc": "Soften lines — natural-looking, never frozen. Includes unit plan & price."
+   },
+   {
+    "id": "iplphoto",
+    "name": "IPL Photofacial Consultation",
+    "dur": 30,
+    "desc": "Light-based treatment for sun spots, redness and uneven tone."
+   },
+   {
+    "id": "forma",
+    "name": "Forma Skin Tightening",
+    "dur": 40,
+    "desc": "Gentle radiofrequency tightening — a favorite for under-eyes, zero downtime."
+   },
+   {
+    "id": "laser",
+    "name": "Laser Hair Removal Consult",
+    "dur": 20,
+    "desc": "Patch test, skin assessment and a session plan."
+   },
+   {
+    "id": "spaconsult",
+    "name": "Aesthetics Consult — Not Sure Yet",
+    "dur": 30,
+    "desc": "Tell us your goal and we will recommend the right treatment, honestly."
+   }
+  ]
+ },
+ "POSTS": [
+  {
+   "t": "Cataract Awareness Month: Understanding This Common Condition",
+   "d": "Jun 4, 2025",
+   "c": "Eye Health",
+   "u": "cataract-awareness-month-understanding-this-common-condition",
+   "b": "exam",
+   "s": "June is Cataract Awareness Month. Reading getting harder, night driving worse? Those can be early cataract signs — what cataracts are, how they progress, and why an exam now beats guessing."
+  },
+  {
+   "t": "Why Do I Have Wrinkles Under My Eyes?",
+   "d": "May 6, 2025",
+   "c": "Aesthetics",
+   "u": "why-do-i-have-wrinkles-under-my-eyes",
+   "b": "spaconsult",
+   "s": "Under-eye wrinkles appear for many reasons — aging, sun exposure and thin skin. What actually helps: skincare, microneedling and Morpheus8, explained without the sales pitch."
+  },
+  {
+   "t": "Can Dry Eye Cause Blurry Vision?",
+   "d": "Apr 2, 2025",
+   "c": "Dry Eye",
+   "u": "can-dry-eye-cause-blurry-vision",
+   "b": "dryeye",
+   "s": "Yes — an unstable tear film blurs the image before it reaches your brain. How we test with Schirmer, tear breakup time and a gland check."
+  },
+  {
+   "t": "Can Radiofrequency Tighten Loose Skin?",
+   "d": "Mar 5, 2025",
+   "c": "Radiofrequency",
+   "u": "can-radiofrequency-tighten-loose-skin",
+   "b": "forma",
+   "s": "RF tightens loose skin on face, neck and jawline as a non-surgical alternative — and dry eye patients often notice fewer fine lines after RF treatment."
+  },
+  {
+   "t": "What is IPL & RF Treatment for Dry Eye?",
+   "d": "Feb 5, 2025",
+   "c": "Dry Eye",
+   "u": "what-is-ipl-rf-treatment-for-dry-eye",
+   "b": "dryeye",
+   "s": "Lumecca IPL reduces inflammation; Forma-I RF melts blocked gland oil. What a session feels like step by step — and why ~4 sessions are typical."
+  },
+  {
+   "t": "How Often Should You Have an Eye Exam?",
+   "d": "Jan 8, 2025",
+   "c": "Eye Exams",
+   "u": "how-often-should-you-have-an-eye-exam",
+   "b": "exam",
+   "s": "Adults and seniors: every year. Children: once between 3 and 5, then annually once school starts. The AOA schedule and the symptoms that mean do not wait."
+  },
+  {
+   "t": "What Are Specialty Contact Lenses?",
+   "d": "Dec 4, 2024",
+   "c": "Eye Exams",
+   "u": "what-are-specialty-contact-lenses",
+   "b": "contacts",
+   "s": "Scleral, RGP, hybrid and custom lenses for keratoconus, severe dry eye and hard-to-fit prescriptions — when standard soft lenses are not enough."
+  },
+  {
+   "t": "Does Ortho-K Work for Nearsightedness?",
+   "d": "Nov 6, 2024",
+   "c": "Eye Exams",
+   "u": "does-ortho-k-work-for-nearsightedness",
+   "b": "contacts",
+   "s": "Orthokeratology lenses are worn overnight to gently reshape the cornea — clear daytime vision without glasses, and slower myopia progression in children."
+  },
+  {
+   "t": "How Do You Know If You Have Binocular Vision Dysfunction?",
+   "d": "Oct 2, 2024",
+   "c": "Eye Exams",
+   "u": "how-do-you-know-if-you-have-binocular-vision-dysfunction",
+   "b": "exam",
+   "s": "When the eyes do not team up properly: headaches, dizziness, reading fatigue and double vision can follow. How BVD is tested and treated."
+  },
+  {
+   "t": "How Learning-Related Vision Problems Affect Reading Skills in Children",
+   "d": "Sep 4, 2024",
+   "c": "Eye Exams",
+   "u": "how-learning-related-vision-problems-affect-reading-skills-in-children",
+   "b": "kids",
+   "s": "80% of learning is visual. Tracking, focusing and eye-teaming problems can look like reading or attention problems. (Sep 2024 edition.)"
+  },
+  {
+   "t": "Does Glaucoma Always Need Treatment?",
+   "d": "Aug 7, 2024",
+   "c": "Uncategorized",
+   "u": "does-glaucoma-always-need-treatment",
+   "b": "exam",
+   "s": "Glaucoma damage cannot be undone, only slowed — which is why early detection at a routine exam matters. When monitoring is enough and when treatment starts."
+  },
+  {
+   "t": "What is the Management of Myopia?",
+   "d": "Jul 3, 2024",
+   "c": "Uncategorized",
+   "u": "what-is-the-management-of-myopia",
+   "b": "contacts",
+   "s": "Myopia control today goes beyond stronger glasses: Ortho-K, atropine and multifocal contacts can slow progression in kids. (Jul 2024 edition.)"
+  },
+  {
+   "t": "August Brings Contact Lens Health Week",
+   "d": "Aug 14, 2024",
+   "c": "Uncategorized",
+   "u": "august-brings-contact-lens-health-week",
+   "b": "contacts",
+   "s": "Healthy habits for lens wearers: hygiene, replacement schedules, and why you should never sleep in lenses unless prescribed."
+  },
+  {
+   "t": "Why Am I Seeing Spots and Squiggly Lines?",
+   "d": "Jun 5, 2024",
+   "c": "Uncategorized",
+   "u": "why-am-i-seeing-spots-and-squiggly-lines",
+   "b": "urgent",
+   "s": "Spots and squiggly lines are usually floaters — debris in the vitreous gel. When floaters signal a retinal tear instead, and why new floaters need a prompt exam."
+  },
+  {
+   "t": "Can Orthokeratology Improve Eyesight?",
+   "d": "May 8, 2024",
+   "c": "Uncategorized",
+   "u": "can-orthokeratology-improve-eyesight",
+   "b": "contacts",
+   "s": "Ortho-K reshapes the cornea overnight — a safe, non-surgical alternative to LASIK for myopia, hyperopia and astigmatism."
+  },
+  {
+   "t": "Does Vision Therapy Work for Concussion?",
+   "d": "Apr 3, 2024",
+   "c": "Uncategorized",
+   "u": "does-vision-therapy-work-for-concussion",
+   "b": "exam",
+   "s": "After a concussion, focusing, tracking and eye teaming often suffer. How vision therapy supports recovery and when to ask for a referral."
+  },
+  {
+   "t": "Why Is a Comprehensive Eye Exam Important?",
+   "d": "Mar 6, 2024",
+   "c": "Uncategorized",
+   "u": "why-is-a-comprehensive-eye-exam-important",
+   "b": "exam",
+   "s": "A comprehensive exam checks far more than a glasses prescription — it can catch glaucoma, diabetes and even cardiovascular signs early."
+  },
+  {
+   "t": "How Do I Know If My Child Needs Vision Therapy?",
+   "d": "May 3, 2024",
+   "c": "Uncategorized",
+   "u": "how-do-i-know-if-my-child-needs-vision-therapy",
+   "b": "kids",
+   "s": "Trouble staying on task, sloppy handwriting, losing place while reading — overlooked vision problems can look like classroom struggles. (May 2024 edition.)"
+  },
+  {
+   "t": "Are Eye Floaters a Big Deal?",
+   "d": "Feb 7, 2024",
+   "c": "Uncategorized",
+   "u": "are-eye-floaters-a-big-deal",
+   "b": "urgent",
+   "s": "Usually harmless, occasionally urgent. The difference between ordinary floaters and the flashes-and-curtain pattern that means same-day care."
+  },
+  {
+   "t": "Vision Rehabilitation for Stroke Recovery: How Does It Work?",
+   "d": "Jan 10, 2024",
+   "c": "Uncategorized",
+   "u": "vision-rehabilitation-for-stroke-recovery-how-does-it-work",
+   "b": "exam",
+   "s": "Vision problems are common after stroke and can slow every other part of recovery. How rehabilitation assessment and therapy help."
+  },
+  {
+   "t": "Who Is Most at Risk of Getting Cataracts?",
+   "d": "Dec 6, 2023",
+   "c": "Uncategorized",
+   "u": "who-is-most-at-risk-of-getting-cataracts",
+   "b": "exam",
+   "s": "Cataracts affect around 25% of people who live to 80+. Risk factors: age, family history, diabetes, smoking, UV exposure, steroids and obesity."
+  },
+  {
+   "t": "How Do I Know If My Dry Eyes Are Severe?",
+   "d": "Nov 8, 2023",
+   "c": "Uncategorized",
+   "u": "how-do-i-know-if-my-dry-eyes-are-severe",
+   "b": "dryeye",
+   "s": "Daily burning, watering and drops that stop working are severity signals. How we grade dry eye and when in-office treatment (IPL/RF) replaces drops."
+  },
+  {
+   "t": "What Is Done in Vision Therapy?",
+   "d": "Oct 11, 2023",
+   "c": "Uncategorized",
+   "u": "what-is-done-in-vision-therapy",
+   "b": "exam",
+   "s": "Guided exercises and activities that retrain how the eyes and brain work together — what a typical therapy program involves."
+  },
+  {
+   "t": "What Are Early Warning Signs of Macular Degeneration?",
+   "d": "Sep 13, 2023",
+   "c": "Uncategorized",
+   "u": "what-are-early-warning-signs-of-macular-degeneration",
+   "b": "exam",
+   "s": "Blurry central vision, straight lines looking wavy, dark spots. Dry vs wet AMD and why early signs deserve a prompt dilated exam."
+  },
+  {
+   "t": "When Should I Be Worried About Eye Allergies?",
+   "d": "Aug 9, 2023",
+   "c": "Uncategorized",
+   "u": "when-should-i-be-worried-about-eye-allergies",
+   "b": "exam",
+   "s": "Itching and watering are usually allergies — until they are not. The symptoms that separate seasonal allergies from infection or something more serious."
+  },
+  {
+   "t": "Can Dry Eyes Be Serious?",
+   "d": "Jun 20, 2024",
+   "c": "Uncategorized",
+   "u": "can-dry-eyes-be-serious",
+   "b": "dryeye",
+   "s": "Untreated dry eye can damage the cornea and raise infection risk. When 'just dry eyes' deserves real treatment. (Jun 2024 edition.)"
+  },
+  {
+   "t": "How Vision Problems Can Interfere With Stroke Recovery",
+   "d": "Jun 14, 2024",
+   "c": "Uncategorized",
+   "u": "how-vision-problems-can-interfere-with-stroke-recovery",
+   "b": "exam",
+   "s": "Reading, balance and rehab exercises all depend on vision. Addressing visual deficits early supports the whole recovery. (Jun 2024 edition.)"
+  },
+  {
+   "t": "How Does LASIK Co-Management Work?",
+   "d": "Jan 31, 2024",
+   "c": "Uncategorized",
+   "u": "how-does-lasik-co-management-work",
+   "b": "exam",
+   "s": "Your optometrist handles consultation, measurements and pre/post-op care while the surgeon performs LASIK. (Jan 2024 edition.)"
+  },
+  {
+   "t": "Is Poor Eyesight More Common in Women?",
+   "d": "Feb 14, 2024",
+   "c": "Uncategorized",
+   "u": "is-poor-eyesight-more-common-in-women",
+   "b": "exam",
+   "s": "Women live longer and face higher risk of several eye conditions — the reasons, and the screening habits that protect vision."
+  },
+  {
+   "t": "What Eye Condition Is Considered an Eye Emergency?",
+   "d": "Mar 13, 2024",
+   "c": "Uncategorized",
+   "u": "what-eye-condition-is-considered-an-eye-emergency",
+   "b": "urgent",
+   "s": "Eye pain, flashes/floaters, infection, sudden vision changes, chemical exposure — the emergencies that need immediate care, and what to do first."
+  },
+  {
+   "t": "Early Warning Signs of Diabetic Retinopathy You Shouldn't Ignore",
+   "d": "May 10, 2023",
+   "c": "Uncategorized",
+   "u": "early-warning-signs-of-diabetic-retinopathy-you-shouldnt-ignore",
+   "b": "diabetic",
+   "s": "Diabetic retinopathy is a leading cause of blindness in adults — and its earliest signs are easy to miss. Annual dilated exams catch it while it is still manageable."
+  },
+  {
+   "t": "What is the Management of Myopia? — 2024 Update",
+   "d": "Feb 20, 2024",
+   "c": "Uncategorized",
+   "u": "what-is-the-management-of-myopia-2024",
+   "b": "contacts",
+   "s": "An updated look at myopia management for Fort Worth families — Ortho-K, atropine and multifocal options compared."
+  },
+  {
+   "t": "Can Dry Eyes Be Serious? — Signs Checklist",
+   "d": "Mar 11, 2024",
+   "c": "Uncategorized",
+   "u": "can-dry-eyes-be-serious-checklist",
+   "b": "dryeye",
+   "s": "A checklist edition: the specific symptoms that move dry eye from nuisance to condition needing in-office care. (Mar 2024 edition.)"
+  },
+  {
+   "t": "How Do You Know If Your Child Needs Vision Therapy?",
+   "d": "Mar 11, 2024",
+   "c": "Uncategorized",
+   "u": "how-do-you-know-if-your-child-needs-vision-therapy",
+   "b": "kids",
+   "s": "Poor visual skills can make school success harder — classroom signs of overlooked vision problems and how vision therapy helps. (Mar 2024 edition.)"
+  },
+  {
+   "t": "How Does LASIK Co-Management Work? — Patient Guide",
+   "d": "Oct 26, 2023",
+   "c": "Uncategorized",
+   "u": "how-does-lasik-co-management-work-guide",
+   "b": "exam",
+   "s": "A patient-guide edition walking through each co-management step, from first consultation to final post-op check. (Oct 2023 edition.)"
+  },
+  {
+   "t": "Learning-Related Vision Problems & Reading — Parent Edition",
+   "d": "Oct 12, 2023",
+   "c": "Uncategorized",
+   "u": "learning-vision-reading-parent-edition",
+   "b": "kids",
+   "s": "The parent-focused edition: how learning-related vision problems show up in reading homework, and what an evaluation covers. (Oct 2023 edition.)"
+  },
+  {
+   "t": "Reverse Nearsightedness with Ortho-K Contact Lenses",
+   "d": "Aug 8, 2023",
+   "c": "Uncategorized",
+   "u": "reverse-nearsightedness-with-ortho-k-contact-lenses",
+   "b": "contacts",
+   "s": "Sleep in Ortho-K lenses, see clearly all day without glasses — how overnight corneal reshaping works and who it suits."
+  },
+  {
+   "t": "Vision Problems & Stroke Recovery — Overview",
+   "d": "Aug 9, 2023",
+   "c": "Uncategorized",
+   "u": "vision-problems-stroke-recovery-overview",
+   "b": "exam",
+   "s": "An overview edition on vision's role in stroke rehabilitation — and why a vision assessment belongs in the recovery plan. (Aug 2023 edition.)"
+  },
+  {
+   "t": "March Is Workplace Eye Wellness Month",
+   "d": "Mar 8, 2023",
+   "c": "Uncategorized",
+   "u": "march-is-workplace-eye-wellness-month",
+   "b": "exam",
+   "s": "Screen-heavy jobs strain eyes: ergonomics, the 20-20-20 rule and protective eyewear — a workplace eye wellness primer."
+  }
+ ],
+ "QUIZ": [
+  {
+   "q": "By mid-afternoon, your eyes feel…",
+   "o": [
+    [
+     "Comfortable, no change",
+     0
+    ],
+    [
+     "A little dry or tired",
+     1
+    ],
+    [
+     "Gritty, burning or sore",
+     2
+    ]
+   ]
+  },
+  {
+   "q": "How does screen time affect you?",
+   "o": [
+    [
+     "No real difference",
+     0
+    ],
+    [
+     "Eyes tire after a few hours",
+     1
+    ],
+    [
+     "Vision blurs; I blink or rub to clear it",
+     2
+    ]
+   ]
+  },
+  {
+   "q": "Do your eyes water unexpectedly?",
+   "o": [
+    [
+     "Rarely",
+     0
+    ],
+    [
+     "Sometimes, in wind or AC",
+     1
+    ],
+    [
+     "Often — watering is a daily thing",
+     2
+    ]
+   ]
+  },
+  {
+   "q": "How often do you use eye drops?",
+   "o": [
+    [
+     "Never",
+     0
+    ],
+    [
+     "A few times a week",
+     1
+    ],
+    [
+     "Daily — and relief does not last",
+     2
+    ]
+   ]
+  },
+  {
+   "q": "Morning symptoms?",
+   "o": [
+    [
+     "Wake up comfortable",
+     0
+    ],
+    [
+     "Slight dryness on waking",
+     1
+    ],
+    [
+     "Lids feel stuck / eyes sting on waking",
+     2
+    ]
+   ]
+  }
+ ],
+ "SHAPES": {
+  "round": {
+   "t": "Rectangular & angular frames",
+   "d": "Straight lines give a round face definition. Our opticians start with rectangular Gucci and Lacoste frames, plus upswept cat-eyes from Tory Burch."
+  },
+  "square": {
+   "t": "Round & oval frames",
+   "d": "Curves soften a strong jawline. Try round Michael Kors and oval Coach frames first."
+  },
+  "oval": {
+   "t": "Almost anything — go bold",
+   "d": "Balanced proportions suit most shapes. Try oversized Burberry, bold Giorgio Armani, or prescription sunglasses."
+  },
+  "heart": {
+   "t": "Bottom-weighted & rimless styles",
+   "d": "Frames wider at the bottom balance a broader forehead. Lightweight Ted Baker and rimless options keep attention on your eyes."
+  }
+ },
+ "INS": {
+  "vsp": "Good news — VSP is one of our most common plans. It typically covers your exam with a copay and gives a frame/lens allowance in our boutique. Bring your card (or member ID) and we will verify exact benefits before your exam.",
+  "eyemed": "Yes — we work with EyeMed. It usually covers exams and provides a frame allowance; designer frames above the allowance are priced as the difference, told to you up front.",
+  "bcbs": "Yes — Blue Cross Blue Shield of Texas is accepted, particularly valuable for medical eye care: diabetic exams, glaucoma checks and urgent visits are often billed medically. Bring both your medical card and any separate vision card.",
+  "aetna": "Yes — Aetna plans are accepted. Coverage varies between medical and vision riders, so email a photo of your card to office@packoptical.com and we will confirm before you book.",
+  "cigna": "Yes — Cigna is accepted. Bring your card and the team will verify benefits before any treatment. For diabetic eye checks, medical coverage often applies.",
+  "cec": "Yes — Community Eye Care is accepted. Bring your member ID and we will verify your exam and frame benefits before your visit.",
+  "davis": "Yes — Davis Vision is accepted. It typically covers exams and provides a frame allowance in our boutique; we will confirm your exact benefits before you are seen.",
+  "medicaid": "Yes — Medicaid is accepted for patients ages 20 and under, including children’s exams. Bring the Medicaid card and we will verify coverage before the visit.",
+  "superior": "Yes — Superior Vision is accepted for exams and eyewear. Bring your card and we will verify your allowance before you choose frames.",
+  "tricare": "Yes — Tricare is accepted. Coverage depends on your plan and whether the visit is routine or medical; bring your card and we will verify before treatment.",
+  "uhc": "Yes — United Healthcare is accepted. Many UHC plans separate medical and vision benefits, so bring both cards if you have them and we will confirm exactly what applies.",
+  "medicare": "Medicare is accepted for medical eye care — including diabetic retinal exams and cataract/glaucoma monitoring. Routine refraction for glasses is treated separately; we will explain exactly what is covered before we start.",
+  "other": "Very likely — we accept most major plans, and unlisted plans are often still workable. Email a photo of your card to office@packoptical.com or call 817-831-6141 and we will check it for you, free.",
+  "none": "No problem at all — many med spa clients and second-pair buyers are self-pay. Exam pricing is quoted up front, aesthetics consultations include an exact written quote, and there is never a surprise bill."
+ }
+}

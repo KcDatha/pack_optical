@@ -1,0 +1,36 @@
+---
+import { SITE, NAV, SERVICE_SLUGS } from '../data/site';
+import demo from '../data/demo-data.json';
+const { path } = Astro.props as { path: string };
+const active = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+const mobileLinks = [
+  ['Home', '/'], ['Our Practice & Team', '/our-practice/'], ['All Services', '/services/'],
+  ...demo.HUB.map((h) => [h[1], `/services/${SERVICE_SLUGS[h[0]]}/`]),
+  ['Eyewear & 20 Brands', '/eyewear/'], ['Patient Centre', '/patient-centre/'], ['Offers', '/offers/'],
+  ['Blog', '/blog/'], ['Location, Hours & Directions', '/visit/'], ['Book appointment →', '/book/'],
+];
+---
+<div class="util-bar"><div class="wrap util-in">
+  <span>1217 Oak Knoll Dr, Fort Worth, TX 76117</span>
+  <span class="u-hide">Mon/Tue/Thu 7:30–5:30 · Wed 8:30–5:30 · Fri–Sun Closed</span>
+  <span class="u-hide">Walk-ins welcome · Se habla español</span>
+  <a href={SITE.contactsOrderUrl} target="_blank" rel="noopener">Order Contacts</a>
+  <a href="/patient-centre/">Patient Centre</a>
+  <a class="u-phone" href={`tel:${SITE.phoneTel}`}>☎ {SITE.phone}</a>
+</div></div>
+<header class="site">
+  <div class="wrap header-in">
+    <a class="logo" href="/" aria-label="PACK. OPTICAL + MED SPA — home"><b>PACK<i>.</i></b><small>OPTICAL + MED SPA</small></a>
+    <nav class="main" aria-label="Main">
+      {NAV.map((n) => <a href={n.href} class={active(n.href) ? 'active' : ''} aria-current={active(n.href) ? 'page' : undefined}>{n.label}</a>)}
+    </nav>
+    <div class="head-actions">
+      <a class="phone-link" href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a>
+      <a class="btn btn-gold btn-sm" href="/book/">BOOK APPOINTMENT</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">☰</button>
+    </div>
+  </div>
+  <div class="wrap mobile-nav" id="mobileNav">
+    {mobileLinks.map(([l, h]) => <a href={h}>{l}</a>)}
+  </div>
+</header>

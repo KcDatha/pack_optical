@@ -1,0 +1,167 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+import { posts } from '../lib/blog';
+import hero1 from '../assets/hero-1.webp';
+import hero2 from '../assets/hero-2.jpg';
+import hero3 from '../assets/hero-3.jpg';
+import dryEye from '../assets/dry-eye.webp';
+import medSpa from '../assets/med-spa.webp';
+import after from '../assets/morpheus-after.webp';
+import before from '../assets/morpheus-before.webp';
+
+const title = 'Optometrist Fort Worth, TX | Pack Optical + Med Spa';
+const description = 'Family-owned optometrist and optical store in Fort Worth, TX since 1951. Eye exams, dry eye clinic, contact lenses, 300+ frames and med spa at 1217 Oak Knoll Drive. Call 817-831-6141.';
+const brands = ['Ray-Ban','Oakley','Gucci','Prada','Michael Kors','Coach','Burberry','Kate Spade','Tory Burch','Ted Baker','Emporio Armani','Lacoste','Guess','Essilor','+ 6 more in store'];
+const reviews = [
+  ['Dr. Alisha is amazing — she found my glaucoma early and sent me to a specialist. Incredibly kind, patient and informative.', 'Google review · Eye care patient'],
+  ['Morpheus8 gave me a beautifully refreshed, youthful glow, Forma worked wonders for my under-eyes, and the Botox was perfect — natural-looking.', 'Google review · Aemi L., Med Spa'],
+  ['After my Morpheus8 treatments my skin is smoother, softer and more radiant — I get compliments constantly.', 'Google review · Heena K., Med Spa'],
+];
+const hours = [['Monday','7:30 AM – 5:30 PM',1],['Tuesday','7:30 AM – 5:30 PM',2],['Wednesday','8:30 AM – 5:30 PM',3],['Thursday','7:30 AM – 5:30 PM',4],['Friday','Closed',5],['Saturday','Closed',6],['Sunday','Closed',0]];
+const schema = {
+  '@context': 'https://schema.org', '@type': 'Optometrist', '@id': `${SITE.url}/#practice`,
+  name: SITE.name, url: `${SITE.url}/`, telephone: '+1-817-831-6141', faxNumber: '+1-682-647-3909', email: SITE.email,
+  foundingDate: '1951', priceRange: '$$',
+  address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: 'Fort Worth', addressRegion: 'TX', postalCode: SITE.address.zip, addressCountry: 'US' },
+  geo: { '@type': 'GeoCoordinates', latitude: 32.7789075, longitude: -97.2812537 },
+  hasMap: SITE.mapsUrl,
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Thursday'], opens: '07:30', closes: '17:30' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '08:30', closes: '17:30' },
+  ],
+  sameAs: [SITE.facebook, SITE.instagram], areaServed: SITE.areas,
+};
+---
+<Base title={title} description={description} path="/" schema={schema}>
+<section class="hero">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hero-slide"><Image src={hero1} alt="" widths={[640, 1024, 1600]} sizes="100vw" loading="eager" fetchpriority="high" quality={70} /></div>
+    <div class="hero-slide"><Image src={hero2} alt="" widths={[640, 1024]} sizes="100vw" loading="lazy" quality={70} /></div>
+    <div class="hero-slide"><Image src={hero3} alt="" widths={[640, 1024, 1600]} sizes="100vw" loading="lazy" quality={70} /></div>
+  </div>
+  <div class="hero-shade"></div><div class="hero-glow"></div>
+  <div class="wrap hero-in">
+    <div>
+      <p class="hero-eyebrow">★ 4.8 · 441 Google reviews · Est. 1951</p>
+      <h1>{['Genuine,','quality','eye','care','in','Fort','Worth.'].map((w, i) => <><span class="hw" style={`--d:${(0.05 + i * 0.13).toFixed(2)}s`}>{w}</span>{' '}</>)}</h1>
+      <div class="gold-rule"></div>
+      <p class="hero-lead">Thorough eye exams, a dry eye clinic that treats the cause, honest eyewear and medical aesthetics — one family practice on Oak Knoll Drive since 1951.</p>
+      <div class="hero-ctas"><a class="btn btn-gold" href="/book/">BOOK APPOINTMENT</a><a class="btn btn-outline-w" href="/services/dry-eye-treatment/">DRY EYE CLINIC</a><a class="btn btn-outline-w" href="/services/">ALL SERVICES</a></div>
+    </div>
+    <aside class="hero-card" aria-label="Today at the clinic">
+      <div class="hc"><b><span class="dot" id="todayDot"></span><span id="todayHeadline">Clinic hours today</span></b><p id="todayHours">Mon–Thu from 7:30 AM</p></div>
+      <div class="hc"><b>Dr. Alisha Poonawala, OD</b><p>Thorough, patient, genuinely caring — the words her patients use most.</p></div>
+      <div class="hc"><b>Closed Fri–Sun?</b><p>Booking, the dry eye quiz, insurance check and chat still work 24/7.</p></div>
+    </aside>
+  </div>
+</section>
+
+<div class="trustbar"><div class="wrap trustbar-in">
+  <div><b>Since 1951</b><span>Family-owned, 3rd generation</span></div>
+  <div><b>4.8 ★</b><span>Google rating</span></div>
+  <div><b>441</b><span>Google reviews</span></div>
+  <div><b>300+ frames</b><span>Designer boutique on site</span></div>
+</div></div>
+
+<section class="block"><div class="wrap">
+  <p class="kicker">Our services</p><h2 class="title">Eye care, dry eye, aesthetics and eyewear — all in one place</h2>
+  <p class="sub">Comprehensive exams, specialist dry eye care, med spa treatments and designer eyewear, from a family-owned practice in Fort Worth since 1951.</p>
+  <div class="card-grid">
+    <article class="scard"><h3>Eye Exams</h3><p>Adult, senior, children's &amp; diabetic exams — 30–60 minutes, findings explained as we go.</p><a href="/services/">See exam options →</a></article>
+    <article class="scard"><h3>Dry Eye Clinic</h3><p>Center of Excellence care: IPL &amp; RF for the glands behind most dry eye — not just drops.</p><a href="/services/dry-eye-treatment/">Dry eye relief →</a></article>
+    <article class="scard"><h3>Contacts &amp; Eyewear</h3><p>Expert fittings, 300+ frames and 20 brands, with honest styling help and no upsell.</p><a href="/eyewear/">Browse eyewear →</a></article>
+    <article class="scard"><h3>Med Spa</h3><p>Morpheus8, IPL, Forma, Botox® &amp; laser — natural-looking results from a medical team.</p><a href="/services/aesthetics-med-spa/">Aesthetics →</a></article>
+  </div>
+</div></section>
+
+<section class="block" style="padding-top:0"><div class="wrap">
+  <div class="teaser navy"><Image src={dryEye} alt="Eye doctor examining a patient during a dry eye evaluation at Pack Optical" widths={[480, 800]} sizes="(max-width:960px) 100vw, 590px" loading="lazy" /><div class="teaser-body">
+    <p class="kicker" style="color:#E9C98A">Dry Eye Clinic</p><h2>Gritty by 3 p.m.? That's not “just allergies.”</h2>
+    <p>Lumecca IPL + Forma-I RF restore your oil glands and tear film — relief that lasts.</p>
+    <ul><li>Full tear-film &amp; gland evaluation first</li><li>Treatment only if it will genuinely help</li></ul>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-white btn-sm" href="/services/dry-eye-treatment/">How dry eye care works</a><a class="btn btn-outline-w btn-sm" href="/patient-centre/#dry-eye-quiz">Take the 60-sec quiz</a></div>
+  </div></div>
+  <div class="teaser goldbg"><div class="teaser-body">
+    <p class="kicker" style="color:#E9C98A">Med Spa</p><h2>Refreshed, never “done.”</h2>
+    <p>“Spa-tometry” — aesthetics led by Dr. Alisha, inside the practice you already trust.</p>
+    <ul><li>Morpheus8 · Forma · IPL photofacial</li><li>Exact written quote before any treatment</li></ul>
+    <a class="btn btn-gold btn-sm" href="/services/aesthetics-med-spa/">Explore aesthetics</a>
+  </div><Image src={medSpa} alt="Med spa treatment at Pack Optical + Med Spa in Fort Worth" widths={[480, 800]} sizes="(max-width:960px) 100vw, 590px" loading="lazy" /></div>
+</div></section>
+
+<section class="block" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Morpheus8 — see the difference</p><h2 class="title">Drag to compare</h2>
+  <p class="sub">This interactive preview uses a single treatment photo with a filter to illustrate the comparison — it is not a patient’s before-and-after. Your consultation includes an honest assessment of the results Morpheus8 can achieve for your skin.</p>
+  <div class="ba-wrap" id="baWrap" style="--pos:50%" role="slider" aria-label="Before and after comparison slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+    <Image class="ba-after" src={after} alt="After Morpheus8 treatment — refreshed, radiant skin at Pack Optical Med Spa" widths={[640, 1100]} sizes="(max-width:1180px) 100vw, 1140px" loading="lazy" />
+    <Image class="ba-before" src={before} alt="" aria-hidden="true" widths={[640, 1100]} sizes="(max-width:1180px) 100vw, 1140px" loading="lazy" />
+    <span class="ba-label" style="left:14px">Before*</span><span class="ba-label" style="right:14px">After*</span>
+    <div class="ba-handle"><div class="ba-knob">↔</div></div>
+  </div>
+  <p style="margin-top:12px"><a href="/services/aesthetics-med-spa/" style="font-weight:800">How Morpheus8 works →</a> · <a href="/book/" style="font-weight:800">Book a consultation</a></p>
+</div></section>
+
+<section class="block" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Eyewear brands</p><h2 class="title">20 brands, one boutique wall</h2>
+  <div class="brands-strip brands-viewport"><div class="brands-track">
+    {brands.map((b) => <span class="brand">{b}</span>)}
+    {brands.map((b) => <span class="brand" aria-hidden="true">{b}</span>)}
+  </div></div>
+  <p style="margin-top:14px"><a href="/eyewear/" style="font-weight:800">See all 20 brands &amp; lens options →</a> · <b>15% off sunglasses</b> · <b>10% senior discount</b></p>
+</div></section>
+
+<section class="block" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Patient love</p><h2 class="title">4.8 stars, from your neighbors</h2>
+  <div class="rev-viewport"><div class="rev-grid rev-track" tabindex="0" aria-label="Patient reviews">
+    {reviews.map((r) => <article class="rev"><span class="stars" aria-label="5 stars">★★★★★</span><p>“{r[0]}”</p><small>{r[1]}</small></article>)}
+  </div></div>
+  <p class="note" style="margin-top:12px">441 Google reviews, 4.8 average — <a href={SITE.mapsUrl} target="_blank" rel="noopener">read them on Google ↗</a></p>
+</div></section>
+
+<section class="block" style="padding-top:0"><div class="wrap">
+  <p class="kicker">From the blog</p><h2 class="title">Latest answers from the practice</h2>
+  <div class="post-grid">
+    {posts.slice(0, 3).map((p) => <article class="journal"><span class="pcat">{p.category}</span><h3>{p.title}</h3><p>{p.excerpt}</p><a href={`/blog/${p.slug}/`}>Read article →</a></article>)}
+  </div>
+  <p style="margin-top:14px"><a href="/blog/" style="font-weight:800">Browse all {posts.length} articles →</a></p>
+</div></section>
+
+<section class="block" style="padding-top:0"><div class="wrap"><div class="split">
+  <div class="card"><h3 style="font-size:24px;margin:0 0 8px">Visit us — Fort Worth</h3>
+    <p style="margin:0 0 6px">{SITE.addressLine}<br />Phone: <a href={`tel:${SITE.phoneTel}`}><b>{SITE.phone}</b></a> · Fax: {SITE.fax}<br />Email: <a href={`mailto:${SITE.email}`}><b>{SITE.email}</b></a></p>
+    <p class="note">10 minutes from downtown, on Airport Freeway between Beach St and Haltom Rd. Free parking.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px"><a class="btn btn-teal btn-sm" target="_blank" rel="noopener" href={SITE.mapsUrl}>Get directions →</a><a class="btn btn-ghost btn-sm" href="/visit/">Hours &amp; directions</a></div>
+  </div>
+  <div class="card"><h3 style="font-size:24px;margin:0 0 10px">Clinic hours</h3>
+    <table class="hours hoursTable"><tbody>{hours.map((h) => <tr data-day={h[2]}><td>{h[0]}</td><td>{h[1]}</td></tr>)}</tbody></table>
+    <p class="note openNowNote" style="margin-top:10px"></p>
+  </div>
+</div></div></section>
+
+<section class="block" style="padding-top:0"><div class="wrap">
+  <div class="final-cta"><h2>Ready when you are.</h2><p>Book eye care and med spa in one place. Pick a service, pick a time that suits you, and request your visit.</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn btn-gold" href="/book/">BOOK APPOINTMENT</a><a class="btn btn-outline-w" href={`tel:${SITE.phoneTel}`}>CALL {SITE.phone}</a></div></div>
+</div></section>
+
+<script>
+  const w = document.getElementById('baWrap');
+  if (w) {
+    const set = (p: number) => {
+      p = Math.max(0, Math.min(100, p));
+      w.style.setProperty('--pos', p + '%');
+      w.setAttribute('aria-valuenow', String(Math.round(p)));
+    };
+    const move = (x: number) => { const r = w.getBoundingClientRect(); set(((x - r.left) / r.width) * 100); };
+    let drag = false;
+    w.addEventListener('pointerdown', (e) => { drag = true; w.setPointerCapture(e.pointerId); move(e.clientX); });
+    w.addEventListener('pointermove', (e) => { if (drag) move(e.clientX); });
+    w.addEventListener('pointerup', () => { drag = false; });
+    w.addEventListener('keydown', (e) => {
+      const v = Number(w.getAttribute('aria-valuenow'));
+      if (e.key === 'ArrowLeft') set(v - 5);
+      if (e.key === 'ArrowRight') set(v + 5);
+    });
+  }
+</script>
+</Base>

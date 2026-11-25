@@ -1,0 +1,9 @@
+---
+import { SITE } from '../data/site';
+---
+<footer class="site"><div class="wrap cols">
+  <div><b style="font-family:'Montserrat',sans-serif;font-size:21px;letter-spacing:.05em">PACK OPTICAL + MED SPA</b><br />Optometrist in Fort Worth, TX — family-owned since 1951.<br />{SITE.addressLine}<br />P: <a href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a> · F: {SITE.fax} · <a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />Hours: {SITE.hoursShort}</div>
+  <div><b>Explore</b><br /><a href="/our-practice/">Our Practice</a><br /><a href="/services/">All Services</a><br /><a href="/services/dry-eye-treatment/">Dry Eye Clinic</a><br /><a href="/services/aesthetics-med-spa/">Aesthetics</a><br /><a href="/blog/">Blog</a><br /><a href="/visit/">Location &amp; Hours</a></div>
+  <div><b>Patients</b><br /><a href="/patient-centre/">Patient Centre</a><br /><a href="/eyewear/">Eyewear &amp; Brands</a><br /><a href="/offers/">Offers</a><br /><a href={SITE.contactsOrderUrl} target="_blank" rel="noopener">Order Contacts ↗</a><br /><a href={SITE.frameSelectorUrl} target="_blank" rel="noopener">Frame Selector ↗</a><br /><a href="/book/">Book Appointment</a></div>
+  <div><b>Follow &amp; Legal</b><br /><a target="_blank" rel="noopener" href={SITE.facebook}>Facebook</a><br /><a target="_blank" rel="noopener" href={SITE.instagram}>Instagram</a><br /><a target="_blank" rel="noopener" href={SITE.mapsUrl}>Google reviews ★ {SITE.rating.value} ({SITE.rating.count})</a><br /><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+</div></footer>

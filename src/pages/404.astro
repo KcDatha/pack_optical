@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+<Base title="Page not found | Pack Optical + Med Spa, Fort Worth" description="That page could not be found. Find eye exams, dry eye care, eyewear and med spa services at Pack Optical in Fort Worth, or call 817-831-6141." path="/404/">
+  <div class="wrap"><div class="page-head">
+    <p class="eyebrow">Error 404</p><h1>We couldn’t find that page</h1>
+    <p class="lead">Try one of these, or call us on <a href={`tel:${SITE.phoneTel}`}><b>{SITE.phone}</b></a>.</p>
+  </div>
+  <section class="block" style="padding-top:12px"><div class="card-grid">
+    <article class="scard"><h3>Eye exams</h3><p>Adult, children’s and diabetic exams.</p><a href="/services/">All services →</a></article>
+    <article class="scard"><h3>Dry eye clinic</h3><p>IPL and RF for the cause.</p><a href="/services/dry-eye-treatment/">Dry eye relief →</a></article>
+    <article class="scard"><h3>Book</h3><p>Request an appointment.</p><a href="/book/">Book now →</a></article>
+    <article class="scard"><h3>Visit</h3><p>Hours and directions.</p><a href="/visit/">Find us →</a></article>
+  </div></section></div>
+</Base>
