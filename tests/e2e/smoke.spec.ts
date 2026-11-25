@@ -1,7 +1,19 @@
 import { test, expect } from '@playwright/test';
 
 // Every URL built so far. Extend each day.
-const urls: { path: string; title: RegExp }[] = [{ path: '/', title: /Optometrist Fort Worth/ }];
+const services = ['comprehensive-eye-exams','childrens-eye-exams','diabetic-eye-exams','contact-lens-fittings','dry-eye-treatment','ipl-treatment','emergency-eye-care','digital-eye-strain','eye-disease-management','laser-surgery-consultation','aesthetics-med-spa'];
+const urls: { path: string; title: RegExp }[] = [
+  { path: '/', title: /Optometrist Fort Worth/ },
+  { path: '/our-practice/', title: /Eye Doctor Fort Worth/ },
+  { path: '/services/', title: /Eye Care Services Fort Worth/ },
+  { path: '/eyewear/', title: /Designer Eyeglasses Fort Worth/ },
+  { path: '/patient-centre/', title: /Patient Centre/ },
+  { path: '/offers/', title: /Offers|Offers/i },
+  { path: '/visit/', title: /Directions & Hours/ },
+  { path: '/privacy/', title: /Privacy/ },
+  { path: '/terms/', title: /Terms/ },
+  ...services.map((s) => ({ path: `/services/${s}/`, title: /Fort Worth/ })),
+];
 
 for (const u of urls) {
   test(`smoke ${u.path}`, async ({ page }) => {
@@ -33,3 +45,14 @@ test('mobile menu opens and closes by keyboard', async ({ page, isMobile }) => {
   await page.keyboard.press('Escape');
   await expect(btn).toHaveAttribute('aria-expanded', 'false');
 });
+
+for (const s of services) {
+  test(`service ${s}: FAQ, book CTA, related links`, async ({ page }) => {
+    await page.goto(`/services/${s}/`);
+    expect(await page.locator('details.faq').count()).toBeGreaterThanOrEqual(4);
+    await expect(page.locator('main a[href="/visit/"]').first()).toBeVisible();
+    expect(await page.locator('main a[href^="/book/"], main a[href^="tel:"]').count()).toBeGreaterThan(0);
+    expect(await page.locator('.info-box a[href^="/services/"], .info-box a[href="/eyewear/"], .info-box a[href="/offers/"]').count()).toBeGreaterThanOrEqual(2);
+    expect(await page.locator('script[type="application/ld+json"]').count()).toBe(3);
+  });
+}

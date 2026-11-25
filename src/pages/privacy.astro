@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../data/site';
+import { crumbs } from '../lib/schema';
+const items = [{ name: 'Home', href: '/' }, { name: 'Privacy', href: '/privacy/' }];
+---
+<Base title="Privacy Policy & Accessibility | Pack Optical, Fort Worth" description="How Pack Optical + Med Spa in Fort Worth handles your information, calls and texts, plus our website accessibility statement. Contact 817-831-6141." path="/privacy/" schema={crumbs(items)}>
+<div class="wrap"><Breadcrumbs items={items} />
+<div class="page-head"><p class="eyebrow">Privacy &amp; accessibility</p><h1>Privacy policy and accessibility statement</h1><p class="lead">The fine print for Pack Optical + Med Spa, Fort Worth, Texas. Draft text carried over from our current site design, pending final confirmation by the practice.</p></div>
+<section class="block" style="padding-top:12px;max-width:860px">
+<h2 class="title" style="font-size:26px">Privacy policy</h2>
+<p><b>Who we are:</b> Pack Optical + Med Spa, {SITE.addressLine}. Contact: <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · <a href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a>.</p>
+<p><b>What we collect:</b> only what you give us — name, phone and email when you request an appointment, message us, or check insurance — plus standard anonymous website analytics. We do not sell personal information.</p>
+<p><b>Please do not send health details through this website.</b> Our forms ask for contact details and a preferred day only. Share clinical information with the office by phone or in person.</p>
+<p><b>Texts &amp; calls:</b> by providing your phone number you consent to calls and texts about appointments and marketing. Pack Med Spa sends at most about 4 marketing texts a month; reply STOP to opt out. Message &amp; data rates may apply.</p>
+<p><b>Health information</b> is handled under HIPAA by the practice's clinical systems.</p>
+<h2 class="title" style="font-size:26px;margin-top:30px">Accessibility statement</h2>
+<p>Pack Optical + Med Spa, {SITE.addressLine}, is committed to making this website usable for everyone, including people using assistive technology. The practice itself is wheelchair accessible. If any page is hard to use, call <a href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a> or email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> and we will help you another way.</p>
+</section></div>
+</Base>

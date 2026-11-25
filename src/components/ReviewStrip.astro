@@ -1,0 +1,11 @@
+---
+import { SITE } from '../data/site';
+const reviews = [
+  ['Dr. Alisha is amazing — she found my glaucoma early and sent me to a specialist. Incredibly kind, patient and informative.', 'Google review · Eye care patient'],
+  ['Morpheus8 gave me a beautifully refreshed, youthful glow, Forma worked wonders for my under-eyes, and the Botox was perfect — natural-looking.', 'Google review · Aemi L., Med Spa'],
+  ['After my Morpheus8 treatments my skin is smoother, softer and more radiant — I get compliments constantly.', 'Google review · Heena K., Med Spa'],
+];
+---
+<section class="block"><p class="kicker">Patient love</p><h2 class="title">4.8 stars, from your neighbors</h2>
+<div class="rev-grid">{reviews.map((r) => <article class="rev"><span class="stars" aria-label="5 stars">★★★★★</span><p>“{r[0]}”</p><small>{r[1]}</small></article>)}</div>
+<p class="note" style="margin-top:12px">441 Google reviews, 4.8 average — <a href={SITE.mapsUrl} target="_blank" rel="noopener">read them on Google ↗</a></p></section>

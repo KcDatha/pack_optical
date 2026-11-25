@@ -15,8 +15,9 @@ interface Props {
   image?: ImageMetadata;
   schema?: object | object[];
   ogType?: string;
+  reviewPending?: boolean;
 }
-const { title, description, path, image = ogDefault, schema, ogType = 'website' } = Astro.props;
+const { title, description, path, image = ogDefault, schema, ogType = 'website', reviewPending = false } = Astro.props;
 const canonical = new URL(path, SITE.url).href;
 const og = await getImage({ src: image, width: 1200, height: 630, format: 'jpg', fit: 'cover' });
 const ogUrl = new URL(og.src, SITE.url).href;
@@ -53,6 +54,7 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
   </head>
   <body>
     <a class="skip" href="#top">Skip to content</a>
+    {noindex && reviewPending && <div class="review-banner" role="note">Staging draft: this page's medical content is pending doctor review and is not yet approved for publication.</div>}
     <Header path={path} />
     <main id="top"><slot /></main>
     <Footer />

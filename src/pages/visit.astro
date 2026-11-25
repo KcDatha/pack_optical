@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Faq from '../components/Faq.astro';
+import { SITE } from '../data/site';
+import { crumbs, faqSchema } from '../lib/schema';
+import building from '../assets/building.jpg';
+const items = [{ name: 'Home', href: '/' }, { name: 'Visit', href: '/visit/' }];
+const hours = [['Monday','7:30 AM – 5:30 PM',1],['Tuesday','7:30 AM – 5:30 PM',2],['Wednesday','8:30 AM – 5:30 PM',3],['Thursday','7:30 AM – 5:30 PM',4],['Friday','Closed',5],['Saturday','Closed',6],['Sunday','Closed',0]];
+const dirs = [
+  ['From Downtown Fort Worth','~10 minutes. I-35W north to I-820 east, exit N Beach St, then Oak Knoll Dr. Or Airport Freeway (Hwy 121) east to the Beach St / Haltom Rd stretch.'],
+  ['From Fort Worth Alliance','I-35W south to I-820 east, exit N Beach St south to Oak Knoll Dr — about 20 minutes in normal traffic.'],
+  ['From Keller','South on the Rufe Snow Dr / N Beach St corridor to Oak Knoll Dr, or Hwy 377 south to I-820 east and the Beach St exit.'],
+  ['From Saginaw','East on Basswood Blvd to N Beach St, then south to Oak Knoll Dr — roughly 15 minutes.'],
+  ['From North Richland Hills','West on I-820 / Airport Freeway (Hwy 121), exit Beach St — we\'re between Beach St and Haltom Rd with free parking on site.'],
+];
+const faqs = [
+  { q: 'Can I book eye care and aesthetics together?', a: 'Yes — request both here online, or call us and we\'ll arrange your eye care and aesthetics appointments for you.' },
+  { q: 'What are your hours?', a: 'Monday, Tuesday & Thursday 7:30 AM – 5:30 PM; Wednesday 8:30 AM – 5:30 PM. Closed Friday, Saturday and Sunday.' },
+  { q: 'What should I bring to an eye exam?', a: 'Insurance card, medication list, current glasses — and your contact lens box if you wear them.' },
+  { q: 'Does Morpheus8 / Botox require a consultation first?', a: 'Yes — every aesthetics plan starts with a short consultation, an honest assessment and an exact quote before any treatment.' },
+  { q: 'Which insurance do you accept?', a: 'Most major plans — VSP, EyeMed, BCBS of Texas, Aetna, Cigna, Medicare and more. Use the checker in the Patient Centre.' },
+  { q: 'I have an eye emergency. What do I do?', a: 'Call 817-831-6141 straight away. If we\'re closed (Fri–Sun) and symptoms are severe, seek urgent care or the ER.' },
+  { q: 'Do you offer gift cards or text specials?', a: 'Med spa gift cards are available in the office. Text subscribers get at most 4 messages a month; reply STOP to opt out anytime.' },
+];
+---
+<Base title="Pack Optical Directions & Hours | Optometrist 76117" description="Visit Pack Optical + Med Spa at 1217 Oak Knoll Drive, Fort Worth, TX 76117. Hours, free parking and directions from Keller, Saginaw and NRH. 817-831-6141." path="/visit/" schema={[crumbs(items), faqSchema(faqs)]} image={building}>
+<div class="wrap"><Breadcrumbs items={items} />
+<div class="page-head"><p class="eyebrow">Visit us — Our Location</p><h1>In Fort Worth, easy to reach — and worth the drive</h1><p class="lead">1217 Oak Knoll Drive, on Airport Freeway between Beach St and Haltom Rd. Patients come from Haltom City, Saginaw, North Richland Hills, Keller, Watauga, Bedford, Euless, Hurst and Richland Hills — with plenty of free parking outside.</p></div>
+<Image src={building} alt="Pack Optical building on Oak Knoll Drive, Fort Worth" widths={[640, 1100]} sizes="(max-width:1180px) 100vw, 1140px" style="border-radius:14px;width:100%;max-height:320px;object-fit:cover" />
+<section class="block"><div class="split">
+<div class="card"><h2 style="font-size:24px;margin:0 0 8px">Pack Optical + Med Spa</h2><p style="margin:0 0 6px">1217 Oak Knoll Drive<br />Fort Worth, TX 76117</p><p style="margin:0 0 6px">Phone: <a href={`tel:${SITE.phoneTel}`}><b>{SITE.phone}</b></a> · Fax: {SITE.fax}</p><p style="margin:0 0 14px">Email: <a href={`mailto:${SITE.email}`}><b>{SITE.email}</b></a></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-teal btn-sm" target="_blank" rel="noopener" href={SITE.mapsUrl}>Get directions →</a><a class="btn btn-ghost btn-sm" href={`tel:${SITE.phoneTel}`}>Call the clinic</a><a class="btn btn-gold btn-sm" href="/book/">Book online</a></div></div>
+<div class="card"><h2 style="font-size:24px;margin:0 0 10px">Clinic hours</h2>
+<table class="hours hoursTable"><tbody>{hours.map((h) => <tr data-day={h[2]}><td>{h[0]}</td><td>{h[1]}</td></tr>)}</tbody></table>
+<p class="note openNowNote" style="margin-top:10px"></p></div>
+</div>
+<iframe title="Map showing Pack Optical + Med Spa at 1217 Oak Knoll Drive, Fort Worth" src="https://www.google.com/maps?q=1217+Oak+Knoll+Drive,+Fort+Worth,+TX+76117&output=embed" width="100%" height="320" style="border:0;border-radius:14px;margin-top:20px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<h2 class="title" style="margin-top:28px">Directions from your area</h2>
+<div class="dir-grid">
+{dirs.map((d) => <div class="dir-card"><h3 style="font-size:16px;margin:0 0 4px">{d[0]}</h3><p>{d[1]}</p></div>)}
+<div class="dir-card"><h3 style="font-size:16px;margin:0 0 4px">Follow us</h3><p>Specials and clinic news: <a href={SITE.instagram} target="_blank" rel="noopener">Instagram ↗</a> · <a href={SITE.facebook} target="_blank" rel="noopener">Facebook ↗</a></p></div>
+</div></section>
+<section class="block" style="padding-top:0"><div class="emerg"><div><h2 style="color:#fff;font-size:24px;margin:0 0 4px">Sudden vision change, eye pain, or something in your eye?</h2><p>That's emergency eye care — a core service here. Don't wait for an online slot. If we're closed and it's severe, go to urgent care or ER.</p></div><a class="btn btn-white" href={`tel:${SITE.phoneTel}`} style="white-space:nowrap">Call {SITE.phone} now</a></div></section>
+<section class="block" style="padding-top:0"><div style="max-width:860px"><p class="kicker">Good to know</p><Faq faqs={faqs} title="Questions, answered" /></div></section>
+</div>
+</Base>

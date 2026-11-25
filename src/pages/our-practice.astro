@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../data/site';
+import { crumbs } from '../lib/schema';
+import team from '../assets/team.jpg';
+import alisha from '../assets/alisha.jpg';
+import yanet from '../assets/yanet.jpg';
+import maddy from '../assets/maddy.jpg';
+const items = [{ name: 'Home', href: '/' }, { name: 'Our Practice', href: '/our-practice/' }];
+const values = [['Compassionate Care','Every patient treated the way we\'d treat our own family.'],['Education','We explain what we find and why — no jargon, no rushing.'],['Excellence','Top-notch technology and thorough, unhurried exams.'],['Family-Owned & Operated','Independent since 1951 — decisions made here, not by a chain.'],['Honesty & Integrity','Only the treatment, lenses and eyewear that genuinely help you.'],['Trust','Care Fort Worth families have handed down for three generations.']];
+const more = [['We Listen First','Exams run 30–60 minutes — up to a full hour when you need it.'],['One-Stop Shop','Exams, dry eye clinic, contacts, 300+ frames and a med spa — one address, one chart.'],['Same-Day Care','Same-day appointments and walk-ins welcome when something can\'t wait.']];
+const insurers = ['Aetna','BCBS of Texas','Cigna','Community Eye Care','Davis Vision','EyeMed','Medicare','Medicaid (20 & under)','Superior Vision','Tricare','United Healthcare','VSP'];
+const schema = [crumbs(items), { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'Our Practice', url: `${SITE.url}/our-practice/`, about: { '@id': `${SITE.url}/#practice` } }];
+---
+<Base title="Eye Doctor Fort Worth | Our Practice & Team | Pack Optical" description="Meet the family-owned Fort Worth eye care team behind Pack Optical since 1951: Dr. Alisha Poonawala, Dr. Asaf Presente, Yanet and Maddy. Call 817-831-6141." path="/our-practice/" schema={schema}>
+<div class="wrap"><Breadcrumbs items={items} />
+<div class="page-head"><p class="eyebrow">About us — Our Practice</p><h1>Third-generation, family-owned eye care in Fort Worth</h1><p class="lead">Dr. Joseph Pack opened Pack Optical in 1951. Seventy-five years later it is still family owned — now in its third generation — at the same Oak Knoll Drive address. You don't just see a doctor here; you see a family.</p></div>
+<Image src={team} alt="The Pack Optical team outside the Oak Knoll practice, in front of the glasses sculpture" widths={[640, 1100]} sizes="(max-width:1180px) 100vw, 1140px" style="border-radius:14px;width:100%;margin:8px 0 4px;height:auto" />
+<section class="block"><h2 class="title">Our values — six, kept simple</h2>
+<div class="values-grid">{values.map((v) => <div class="value-card"><b>{v[0]}</b><p>{v[1]}</p></div>)}</div>
+<div class="values-grid" style="margin-top:12px">{more.map((v) => <div class="value-card"><b>{v[0]}</b><p>{v[1]}</p></div>)}</div></section>
+<section class="block" style="padding-top:0"><p class="kicker">Meet the team</p><h2 class="title">Four people behind the 4.8 stars</h2>
+<div class="team-grid">
+  <article class="team-card"><Image src={alisha} alt="Dr. Alisha Poonawala, OD" widths={[350]} sizes="260px" loading="lazy" /><div><b>Dr. Alisha Poonawala, OD</b><span>Optometrist — comprehensive, diabetic &amp; dry eye care. Leads the clinic and the med spa.</span></div></article>
+  <article class="team-card"><div class="placeholder-photo" aria-hidden="true">AP</div><div><b>Dr. Asaf Presente, MD</b><span>Ophthalmologist on the Pack care team.</span></div></article>
+  <article class="team-card"><Image src={yanet} alt="Yanet, Office Manager" widths={[350]} sizes="260px" loading="lazy" /><div><b>Yanet</b><span>Office Manager — appointments, insurance checks and the front desk.</span></div></article>
+  <article class="team-card"><Image src={maddy} alt="Maddy, Marketing Guru" widths={[350]} sizes="260px" loading="lazy" /><div><b>Maddy</b><span>Marketing Guru — community presence, offers and social feeds.</span></div></article>
+</div>
+<p class="note" style="margin-top:12px">Plus the optical &amp; med spa teams — frame styling, Essilor lens fitting, contact lens training, Morpheus8, IPL, RF tightening and laser.</p></section>
+<section class="block" style="padding-top:0"><p class="kicker">Insurance we work with</p><h2 class="title">Most major plans — check yours in seconds</h2>
+<div class="chips-list">{insurers.map((i) => <span class="brand">{i}</span>)}</div>
+<p style="margin-top:14px">Don't see yours? Call <a href={`tel:${SITE.phoneTel}`}><b>{SITE.phone}</b></a> — or <a href="/patient-centre/#insurance" style="font-weight:800">use the Insurance Checker →</a></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px"><a class="btn btn-teal" href="/book/">Book with Dr. Alisha</a><a class="btn btn-ghost" href="/services/">See all services</a></div></section>
+</div>
+</Base>

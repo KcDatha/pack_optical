@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { crumbs } from '../lib/schema';
+const items = [{ name: 'Home', href: '/' }, { name: 'Offers', href: '/offers/' }];
+---
+<Base title="Eyeglasses Offers Fort Worth | $99 Kids Glasses Plan | Pack" description="Pack Optical offers in Fort Worth: Packs Unlimited kids plan $99 a year, 15% off sunglasses and 10% senior discount on frames. Call 817-831-6141." path="/offers/" schema={crumbs(items)}>
+<div class="wrap"><Breadcrumbs items={items} />
+<div class="page-head"><p class="eyebrow">Current offers</p><h1>Offers at Pack Optical + Med Spa</h1><p class="lead">Save on children's eye care, sunglasses and senior eyewear — book online or call 817-831-6141.</p></div>
+<section class="block" style="padding-top:12px"><div class="offers-grid">
+<article class="offer"><p class="kicker" style="margin:0">Kids — Packs Unlimited</p><div class="price">$99 / year</div><p>Unlimited children's eye exams for a year, <b>$25 frame &amp; lens sets</b> and <b>$25 replacements</b> — with same-day pickup.</p><a class="btn btn-teal btn-sm" href="/book/">Book a kids' exam</a></article>
+<article class="offer"><p class="kicker" style="margin:0">Sunglasses</p><div class="price">15% off sunglasses</div><p>Prescription and non-prescription sunglasses across the boutique — Ray-Ban, Oakley, Michael Kors and more.</p><a class="btn btn-teal btn-sm" href="/book/">Book a styling visit</a></article>
+<article class="offer"><p class="kicker" style="margin:0">Seniors</p><div class="price">10% off frames &amp; sunglasses</div><p>Senior discount on frames and sunglasses — because annual exams after 60 deserve eyewear that fits the budget too.</p><a class="btn btn-teal btn-sm" href="/book/">Book a senior exam</a></article>
+</div>
+<p class="note" style="margin-top:14px">Text-only deals: Pack Med Spa sends at most 4 texts a month with subscriber specials. Reply STOP anytime to opt out. Offers may change with notice; see our <a href="/terms/">terms</a>.</p></section>
+</div>
+</Base>

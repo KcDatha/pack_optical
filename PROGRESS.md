@@ -20,3 +20,25 @@ Lighthouse mobile, home (3 runs): Performance 98/100/100, Accessibility 97, Best
 1. Send client questions (team, hours, insurers, offers, booking system).
 2. Decide Day 2 service-page depth (see above).
 3. Create the Cloudflare account/project (client owned) before Day 4.
+
+## Day 2: Thu 2026-11-26 — All pages exist (sprint)
+Built: /our-practice/, /services/, /eyewear/, /patient-centre/ (insurance checker, dry eye quiz, frame guide, first-visit guide), /offers/, /visit/ (hours with today highlighted, map, directions, 7 FAQs), /privacy/ (with accessibility statement), /terms/, and a shared service template with all 11 service pages. 21 URLs total including home and 404.
+
+Service pages: dry eye perfected first, then all 10 others generated from the same template and `src/data/services.ts`. Each has intro, what it is, who it's for, appointment steps, expectations, benefits, accordions, 5 FAQs (FAQPage schema), Service + BreadcrumbList schema, links to Book, Visit and 2 related services, review strip.
+
+### DRAFT CONTENT, PENDING DOCTOR REVIEW (Guru decision, 2026-11-26)
+The demo has ~150 words and no FAQs per service. Per Guru's decision, the gap was filled with draft text (appointment steps, benefit lists, extra "what it is" paragraphs, 5 FAQs per service, shared "Planning your visit" block) drawn from the demo facts and general patient education. Nothing was added about prices, outcomes or guarantees beyond the demo. Every service page is flagged `reviewPending`: staging builds (PUBLIC_NOINDEX=1) show a banner on those pages. BUILD_PLAN Phase 9 doctor approval is required before launch, and the banner must be removed once approved (src/pages/services/[slug].astro, `reviewPending`).
+Also pending client confirmation: /privacy/ and /terms/ text (carried over from the demo, short; accessibility statement is on /privacy/).
+
+### Daily Gate
+- build clean, astro check 0 errors, lint clean, Vitest 11/11
+- Playwright 117 pass (chromium + mobile pixel): smoke on all 21 URLs, service FAQ/CTA/links/schema, quiz/frame guide/insurance (keyboard), axe zero critical/serious on 10 templates in light and dark
+- Link check: 0 broken; 5 links to /book/ and /blog/ (Day 3)
+- Content audit (scripts/audit-content.mjs): one H1, titles 50-60, descriptions 140-160, no duplicate title/description/H1, all service pages 831-935 words (target 800)
+- Lighthouse mobile: home 96-98 perf, dry eye 100, patient centre 100, services 99; accessibility 95-97; best practices 100; SEO 100. Day 4 needs 95+ everywhere (met so far).
+
+### Notes
+- Service template word counts include the shared "Planning your visit" block (about 130 words).
+- /visit/ map is a Google Maps iframe (lazy). No cookies set by us.
+- Dr. Presente still uses an initials placeholder (no photo in demo).
+- Quiz is a screening aid; page states it is not a diagnosis.

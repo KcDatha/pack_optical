@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Faq from '../../components/Faq.astro';
+import ReviewStrip from '../../components/ReviewStrip.astro';
+import { SITE } from '../../data/site';
+import { services, relatedLinks } from '../../data/services';
+import { faqSchema, crumbs, serviceSchema } from '../../lib/schema';
+
+export function getStaticPaths() { return services.map((s) => ({ params: { slug: s.slug }, props: { s } })); }
+const { s } = Astro.props;
+const path = `/services/${s.slug}/`;
+const rel = relatedLinks(s);
+const items = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: s.hubTitle, href: path }];
+---
+<Base title={s.title} description={s.description} path={path} reviewPending
+  schema={[serviceSchema(s.hubTitle, s.description, path), faqSchema(s.faqs), crumbs(items)]}>
+<div class="wrap">
+  <Breadcrumbs items={items} />
+  <div class="page-head"><p class="eyebrow">{s.eyebrow}</p><h1>{s.h1}</h1><p class="lead">{s.intro}</p><div class="gold-rule"></div></div>
+  <div class="svc-layout"><div class="svc-main">
+    <h2 class="title">What it is</h2>
+    {s.what.map((p) => <p class="sub" style="margin-bottom:12px">{p}</p>)}
+    <h2 class="title">Who it's for</h2>
+    <ul class="checks">{s.who.map((x) => <li>{x}</li>)}</ul>
+    <h2 class="title">What happens at your appointment</h2>
+    <ol class="steps-list">{s.steps.map((st) => <li><b>{st.h}</b><span>{st.p}</span></li>)}</ol>
+    <h2 class="title">What to expect</h2>
+    <ul class="checks">{s.expect.map((x) => <li>{x}</li>)}</ul>
+    <h2 class="title">Benefits</h2>
+    <ul class="checks">{s.benefits.map((x) => <li>{x}</li>)}</ul>
+    <h2 class="title">Planning your visit</h2>
+    <p class="sub" style="margin-bottom:12px">We are at {SITE.addressLine}, on Airport Freeway between Beach St and Haltom Rd, with free parking outside. Please arrive about 10 minutes early. Bring your insurance card, your medication list and your current glasses, plus your contact lens box if you wear them. Intake forms are texted to your phone before your visit, so there is nothing to print and no portal password to remember.</p>
+    <p class="sub" style="margin-bottom:12px">We work with most major vision and medical plans, including VSP, EyeMed, BCBS of Texas, Aetna, Cigna, Medicare and more, and we verify your benefits before treatment. Our hours are Monday, Tuesday and Thursday 7:30 AM to 5:30 PM and Wednesday 8:30 AM to 5:30 PM, closed Friday to Sunday. Walk-ins are welcome, se habla español, and you can <a class="hub-link" href="/patient-centre/">check your insurance in the Patient Centre</a>.</p>
+    <h2 class="title">Good to know</h2>
+    {s.acc.map((a) => <details class="svc-detail"><summary>{a[0]}</summary><p>{a[1]}</p></details>)}
+    <Faq faqs={s.faqs} />
+    <h2 class="title">Related care</h2>
+    <p class="sub">Explore {rel.map((r, i) => <><a class="hub-link" href={r.href}>{r.label}</a>{i < rel.length - 1 ? ' or ' : ''}</>)}, or <a class="hub-link" href="/visit/">plan your visit</a>.</p>
+  </div>
+  <aside class="info-box"><h3>{s.emergency ? 'Call us now' : 'Book this service'}</h3>
+    <p class="note" style="margin:0 0 14px">{s.hubTitle} — request your visit in under a minute.</p>
+    {s.emergency
+      ? <a class="btn btn-teal" style="width:100%" href={`tel:${SITE.phoneTel}`}>Call {SITE.phone}</a>
+      : <a class="btn btn-teal" style="width:100%" href="/book/">{s.bookLabel}</a>}
+    <p class="note" style="margin:12px 0 0">{SITE.addressLine}<br /><a href={`tel:${SITE.phoneTel}`}><b>{SITE.phone}</b></a><br />Mon/Tue/Thu 7:30–5:30 · Wed 8:30–5:30</p>
+    <hr style="border:0;border-top:1px solid var(--line);margin:16px 0" />
+    <p class="note" style="margin:0"><b>Related:</b> {rel.map((r, i) => <><a href={r.href}>{r.label}</a>{i < rel.length - 1 ? ' · ' : ''}</>)} · <a href="/visit/">Visit</a></p>
+  </aside></div>
+  <ReviewStrip />
+  <section class="block" style="padding-top:0"><div class="final-cta"><h2>Questions first? That's fine too.</h2><p>Use the tools in the Patient Centre, or just call. No appointment is needed to ask.</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn btn-gold" href="/book/">BOOK APPOINTMENT</a><a class="btn btn-outline-w" href="/patient-centre/">PATIENT CENTRE</a></div></div></section>
+</div>
+</Base>

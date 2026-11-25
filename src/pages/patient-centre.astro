@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../data/site';
+import { crumbs } from '../lib/schema';
+import { INSURANCE_OPTIONS, FACE_SHAPES } from '../lib/tools';
+const items = [{ name: 'Home', href: '/' }, { name: 'Patient Centre', href: '/patient-centre/' }];
+---
+<Base title="Patient Centre | Insurance, Eye Quiz & Frame Finder | Pack" description="Check your insurance, take the 60-second dry eye quiz, find frames for your face shape and prepare for your first visit at Pack Optical, Fort Worth." path="/patient-centre/" schema={crumbs(items)}>
+<div class="wrap"><Breadcrumbs items={items} />
+<div class="page-head"><p class="eyebrow">Patient Centre</p><h1>Insurance, self-checks &amp; first-visit guide — in one place</h1><p class="lead">Everything patients ask the front desk, self-serve: check your plan, score your dry eye symptoms, find your frame shape, and know what to bring.</p></div>
+<section class="block" style="padding-top:12px">
+<div class="tool-grid">
+<div class="tool" id="insurance"><h2>Do you take my insurance?</h2><p style="color:var(--muted)">Most major vision and medical plans accepted; medical insurance also covers diabetic eye checks.</p>
+<label for="insSelect" style="font-weight:800;font-size:13.5px;display:block;margin:12px 0 6px">Your plan</label>
+<select id="insSelect"><option value="">— Choose a plan —</option>{INSURANCE_OPTIONS.map((o) => <option value={o.value}>{o.label}</option>)}</select>
+<div id="insResult" aria-live="polite" style="margin-top:12px"></div>
+<p class="note" style="margin-top:12px">Final verification happens before treatment — call <a href={`tel:${SITE.phoneTel}`}><b>{SITE.phone}</b></a> or email a photo of your card to <a href={`mailto:${SITE.email}`}><b>{SITE.email}</b></a>. Aesthetics are self-pay with an exact written quote first.</p></div>
+<div class="tool"><h2>Your first visit, step by step</h2>
+<ul class="check-list"><li><span><b>Bring:</b> insurance card, medication list, current glasses — and your contact lens box if you wear them.</span></li><li><span><b>Arrive 10 minutes early</b> at 1217 Oak Knoll Dr. Free parking outside.</span></li><li><span><b>Exam (30–45 min):</b> vision, eye health, retinal screening. Dilation only if needed — you'll be warned first.</span></li><li><span><b>Glasses:</b> Essilor lenses incl. Varilux® &amp; Crizal®, fitted in our boutique.</span></li><li><span><b>Forms:</b> intake forms are texted to your phone before your visit — no printing, no portal password.</span></li></ul>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-teal btn-sm" href="/book/">Book my exam</a><a class="btn btn-ghost btn-sm" href="mailto:office@packoptical.com?subject=New%20patient%20question%20%E2%80%94%20Pack%20Optical">Email the office</a></div></div>
+</div>
+<div class="tool-grid" style="margin-top:14px">
+<div class="tool" id="dry-eye-quiz"><h2>The 60-second dry eye check</h2><p style="color:var(--muted);margin:0 0 14px">Five questions, scored live — burning, grittiness, screen blur, watering and drop dependence. This is a screening aid, not a diagnosis.</p><div class="quiz-prog" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="quizBar" style="width:0%"></i></div><div id="quizBody" aria-live="polite"><noscript>Please enable JavaScript to use the quiz, or call {SITE.phone}.</noscript></div></div>
+<div class="tool" id="frame-guide"><h2>Which frames suit your face?</h2><p style="color:var(--muted);margin:0 0 14px">Pick your face shape — we show the shapes our opticians reach for first.</p>
+<div class="frame-shapes" id="shapeRow" role="group" aria-label="Face shape">{FACE_SHAPES.map((s, i) => <button class={`shape-btn${i === 0 ? ' sel' : ''}`} data-shape={s} aria-pressed={i === 0 ? 'true' : 'false'}>{s[0].toUpperCase() + s.slice(1)}</button>)}</div>
+<div id="shapeResult" aria-live="polite" style="margin-top:16px"></div></div>
+</div>
+<div class="tech-list" style="margin-top:14px">
+<div class="tech"><h2>Lumecca IPL</h2><p>InMode pulsed light that calms the inflammation driving most dry eye — and fades sun spots and redness at the same time.</p></div>
+<div class="tech"><h2>Forma-I RF</h2><p>Radiofrequency that warms and unblocks the meibomian oil glands, restoring the tear film drops can't fix.</p></div>
+<div class="tech"><h2>Morpheus8</h2><p>RF microneedling for face, jawline and neck — always starts with a consultation and an honest assessment.</p></div>
+</div>
+<div class="card" style="margin-top:14px;max-width:760px"><h2 style="font-size:22px;margin:0 0 6px">Write to the office</h2><p class="note" style="margin:0 0 12px">Insurance question, contact reorder, gift card or records request? Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or call <a href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a>. Please don't include health details in email. Urgent eye problem? Call instead.</p></div>
+</section></div>
+<script>
+  import { QUIZ, QUIZ_MAX, quizVerdict, frameAdvice, insuranceAnswer } from '../lib/tools';
+  // Insurance
+  const sel = document.getElementById('insSelect') as HTMLSelectElement;
+  const insOut = document.getElementById('insResult')!;
+  sel.addEventListener('change', () => {
+    const a = insuranceAnswer(sel.value);
+    insOut.replaceChildren();
+    if (!a) return;
+    const box = document.createElement('div'); box.style.cssText = 'border-left:3px solid var(--gold);background:var(--bg);padding:13px 15px';
+    const p = document.createElement('p'); p.style.cssText = 'margin:0;font-size:15px'; p.textContent = a; box.append(p); insOut.append(box);
+  });
+  // Quiz
+  const body = document.getElementById('quizBody')!; const bar = document.getElementById('quizBar')!;
+  let qi = 0, score = 0;
+  function el<K extends keyof HTMLElementTagNameMap>(tag: K, cls?: string, text?: string) { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
+  function setBar(pct: number) { bar.style.width = pct + '%'; bar.parentElement!.setAttribute('aria-valuenow', String(Math.round(pct))); }
+  function renderQuiz() {
+    body.replaceChildren(); setBar((qi / QUIZ.length) * 100);
+    if (qi >= QUIZ.length) {
+      const v = quizVerdict(score);
+      body.append(el('div', 'score-big', `${score} / ${QUIZ_MAX}`), Object.assign(el('p', '', v.verdict), { style: 'font-weight:800;margin:8px 0 4px' }), Object.assign(el('p', '', v.detail), { style: 'color:var(--muted);margin:0 0 14px' }));
+      const row = el('div'); row.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap';
+      const book = el('a', 'btn btn-teal btn-sm', 'Book a Dry Eye Consultation'); (book as HTMLAnchorElement).href = '/book/';
+      const again = el('button', 'btn btn-ghost btn-sm', 'Retake'); again.addEventListener('click', () => { qi = 0; score = 0; renderQuiz(); (body.querySelector('button') as HTMLElement)?.focus(); });
+      row.append(book, again); body.append(row); setBar(100); return;
+    }
+    const item = QUIZ[qi];
+    body.append(el('p', 'quiz-q', `Question ${qi + 1} of ${QUIZ.length} — ${item.q}`));
+    const box = el('div', 'quiz-opts');
+    item.options.forEach((o) => { const b = el('button', 'quiz-opt', o.label); b.addEventListener('click', () => { score += o.score; qi++; renderQuiz(); (body.querySelector('button, .score-big') as HTMLElement | null)?.focus?.(); }); box.append(b); });
+    body.append(box);
+  }
+  renderQuiz();
+  // Frames
+  const out = document.getElementById('shapeResult')!;
+  function renderShape(k: string) {
+    const r = frameAdvice(k); out.replaceChildren(); if (!r) return;
+    const t = el('p', '', r.t); t.style.cssText = "font-family:Montserrat,sans-serif;font-weight:800;font-size:20px;margin:0 0 6px";
+    const d = el('p', '', r.d); d.style.cssText = 'color:var(--muted);margin:0 0 12px';
+    const a = el('a', 'btn btn-teal btn-sm', 'Try them on — free styling visit'); (a as HTMLAnchorElement).href = '/book/';
+    out.append(t, d, a);
+  }
+  document.querySelectorAll<HTMLButtonElement>('#shapeRow .shape-btn').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('#shapeRow .shape-btn').forEach((x) => { x.classList.remove('sel'); x.setAttribute('aria-pressed', 'false'); });
+    b.classList.add('sel'); b.setAttribute('aria-pressed', 'true'); renderShape(b.dataset.shape!);
+  }));
+  renderShape('round');
+</script>
+</Base>

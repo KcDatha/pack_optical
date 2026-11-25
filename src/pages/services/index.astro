@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE } from '../../data/site';
+import { services } from '../../data/services';
+import { crumbs } from '../../lib/schema';
+const items = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }];
+---
+<Base title="Eye Care Services Fort Worth | Pack Optical + Med Spa" description="Eye care services in Fort Worth, TX: eye exams, children's and diabetic exams, dry eye clinic, contacts, emergency care and med spa at Pack Optical." path="/services/" schema={crumbs(items)}>
+<div class="wrap"><Breadcrumbs items={items} />
+<div class="page-head"><p class="eyebrow">Services</p><h1>Eye care &amp; aesthetics services in Fort Worth</h1><p class="lead">From routine exams to specialist dry eye care and med spa treatments, choose a service to see what it involves, who it's for, what to expect, and to book.</p></div>
+<section class="block" style="padding-top:16px"><h2 class="title" style="font-size:26px;margin-top:0">All services</h2><div class="card-grid">
+  {services.map((s) => <article class="scard"><h3>{s.hubTitle}</h3><p>{s.hubDesc}</p><a href={`/services/${s.slug}/`}>View service →</a></article>)}
+  <article class="scard"><h3>Eyewear &amp; Brands</h3><p>300+ frames, 20 brands, Essilor lenses.</p><a href="/eyewear/">Browse eyewear →</a></article>
+</div></section>
+<section class="block" style="padding-top:0"><div class="emerg"><div><h3>Eye emergency right now?</h3><p>Sudden vision change, pain, injury or something in your eye. Don't browse. Call now.</p></div><a class="btn btn-white" href={`tel:${SITE.phoneTel}`} style="white-space:nowrap">Call {SITE.phone}</a></div></section>
+</div>
+</Base>

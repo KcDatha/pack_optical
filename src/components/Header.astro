@@ -5,7 +5,7 @@ const { path } = Astro.props as { path: string };
 const active = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
 const mobileLinks = [
   ['Home', '/'], ['Our Practice & Team', '/our-practice/'], ['All Services', '/services/'],
-  ...demo.HUB.map((h) => [h[1], `/services/${SERVICE_SLUGS[h[0]]}/`]),
+  ...demo.HUB.filter((h) => SERVICE_SLUGS[h[0]]).map((h) => [h[1], `/services/${SERVICE_SLUGS[h[0]]}/`]),
   ['Eyewear & 20 Brands', '/eyewear/'], ['Patient Centre', '/patient-centre/'], ['Offers', '/offers/'],
   ['Blog', '/blog/'], ['Location, Hours & Directions', '/visit/'], ['Book appointment →', '/book/'],
 ];

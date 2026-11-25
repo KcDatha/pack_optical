@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../data/site';
+import { crumbs } from '../lib/schema';
+const items = [{ name: 'Home', href: '/' }, { name: 'Terms', href: '/terms/' }];
+---
+<Base title="Terms & Conditions (Texas Law) | Pack Optical, Fort Worth" description="Terms and conditions for the Pack Optical + Med Spa website in Fort Worth, Texas: governing law, general information notice and current offers. 817-831-6141." path="/terms/" schema={crumbs(items)}>
+<div class="wrap"><Breadcrumbs items={items} />
+<div class="page-head"><p class="eyebrow">Terms</p><h1>Terms &amp; conditions</h1><p class="lead">Terms of use for the Pack Optical + Med Spa website. Draft text carried over from our current site design, pending final confirmation by the practice.</p></div>
+<section class="block" style="padding-top:12px;max-width:860px">
+<p>These terms are governed by the laws of the <b>State of Texas, USA</b>.</p>
+<p>Content on this website is general information, not medical advice for any individual. It does not replace an examination by a doctor. If you have an eye emergency, call <a href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a>; if we are closed and symptoms are severe, go to urgent care or the emergency room.</p>
+<p>Offers (Packs Unlimited $99/year, 15% off sunglasses, 10% senior discount) are as stated on the <a href="/offers/">Offers page</a> and may change with notice.</p>
+<p>Questions about these terms: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+</section></div>
+</Base>
