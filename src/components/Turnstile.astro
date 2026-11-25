@@ -1,0 +1,7 @@
+---
+// Cloudflare Turnstile. PUBLIC_TURNSTILE_SITEKEY must be set for staging/production;
+// the fallback is Cloudflare's always-pass TEST key and must never ship live.
+const key = import.meta.env.PUBLIC_TURNSTILE_SITEKEY ?? '1x00000000000000000000AA';
+---
+<div class="cf-turnstile" data-sitekey={key} data-theme="auto"></div>
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

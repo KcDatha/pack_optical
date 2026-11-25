@@ -12,6 +12,9 @@ const urls: { path: string; title: RegExp }[] = [
   { path: '/visit/', title: /Directions & Hours/ },
   { path: '/privacy/', title: /Privacy/ },
   { path: '/terms/', title: /Terms/ },
+  { path: '/book/', title: /Book an Eye Exam Fort Worth/ },
+  { path: '/blog/', title: /Eye Health Blog Fort Worth/ },
+  { path: '/blog/can-dry-eye-cause-blurry-vision/', title: /Blurry Vision/ },
   ...services.map((s) => ({ path: `/services/${s}/`, title: /Fort Worth/ })),
 ];
 

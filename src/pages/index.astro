@@ -2,7 +2,8 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { SITE } from '../data/site';
-import { posts } from '../lib/blog';
+import { allPosts } from '../lib/blog';
+const posts = await allPosts();
 import hero1 from '../assets/hero-1.webp';
 import hero2 from '../assets/hero-2.jpg';
 import hero3 from '../assets/hero-3.jpg';
@@ -123,7 +124,7 @@ const schema = {
 <section class="block" style="padding-top:0"><div class="wrap">
   <p class="kicker">From the blog</p><h2 class="title">Latest answers from the practice</h2>
   <div class="post-grid">
-    {posts.slice(0, 3).map((p) => <article class="journal"><span class="pcat">{p.category}</span><h3>{p.title}</h3><p>{p.excerpt}</p><a href={`/blog/${p.slug}/`}>Read article →</a></article>)}
+    {posts.slice(0, 3).map((p) => <article class="journal"><span class="pcat">{p.data.category}</span><h3>{p.data.title}</h3><p>{p.data.excerpt}</p><a href={`/blog/${p.data.slug}/`}>Read article →</a></article>)}
   </div>
   <p style="margin-top:14px"><a href="/blog/" style="font-weight:800">Browse all {posts.length} articles →</a></p>
 </div></section>

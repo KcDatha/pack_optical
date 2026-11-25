@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { allPosts, fmtDate } from '../../lib/blog';
+import { crumbs } from '../../lib/schema';
+const posts = await allPosts();
+const cats = ['All', ...[...new Set(posts.map((p) => p.data.category))].sort()];
+const items = [{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog/' }];
+---
+<Base title="Eye Health Blog Fort Worth | Pack Optical + Med Spa" description={`Straight answers from the Fort Worth Pack Optical team: dry eye, Ortho-K, glaucoma, cataracts, myopia, Morpheus8 and more. ${posts.length} articles, searchable by topic.`} path="/blog/" schema={crumbs(items)}>
+<div class="wrap"><Breadcrumbs items={items} />
+<div class="page-head"><p class="eyebrow">The Pack Blog</p><h1>Straight answers, written by this practice</h1><p class="lead">All {posts.length} articles from our team. Search or filter by topic, then open any article to read it in full.</p></div>
+<section class="block" style="padding-top:12px">
+<div class="blog-tools"><label class="sr-only" for="blogSearch">Search articles</label><input type="search" id="blogSearch" placeholder={`Search ${posts.length} articles — try “dry eye”, “Ortho-K”, “glaucoma”…`} />
+<div role="group" aria-label="Filter by topic" style="display:contents">{cats.map((c) => <button type="button" class={`cat-chip${c === 'All' ? ' sel' : ''}`} data-bcat={c} aria-pressed={c === 'All' ? 'true' : 'false'}>{c}</button>)}</div></div>
+<p class="note" id="blogCount" role="status" style="margin:0 0 12px">Showing all {posts.length} articles</p>
+<div class="post-grid" id="postGrid">
+  {posts.map((p) => <article class="journal" data-title={p.data.title} data-excerpt={p.data.excerpt} data-cat={p.data.category}><span class="pcat">{p.data.category}</span><h2 style="font-size:19px;margin:8px 0 6px">{p.data.title}</h2><p>{p.data.excerpt}</p><p class="note" style="margin:0 0 10px;flex:none">{fmtDate(p.data.publishedAt)}</p><a href={`/blog/${p.data.slug}/`}>Read article →</a></article>)}
+</div>
+<p id="blogEmpty" hidden class="lead">No articles match. Try a different word, or <a href="/blog/">clear the search</a>.</p>
+</section></div>
+<script>
+  import { filterPosts } from '../../lib/filter';
+  const cards = [...document.querySelectorAll<HTMLElement>('#postGrid .journal')];
+  const data = cards.map((el) => ({ el, title: el.dataset.title!, excerpt: el.dataset.excerpt!, category: el.dataset.cat! }));
+  const input = document.getElementById('blogSearch') as HTMLInputElement;
+  const count = document.getElementById('blogCount')!; const empty = document.getElementById('blogEmpty')!;
+  let cat = 'All';
+  function apply() {
+    const keep = new Set(filterPosts(data, input.value, cat).map((d) => d.el));
+    cards.forEach((c) => { c.hidden = !keep.has(c); });
+    count.textContent = keep.size === cards.length ? `Showing all ${cards.length} articles` : `${keep.size} of ${cards.length} articles`;
+    empty.hidden = keep.size > 0;
+  }
+  input.addEventListener('input', apply);
+  document.querySelectorAll<HTMLButtonElement>('.cat-chip').forEach((b) => b.addEventListener('click', () => {
+    cat = b.dataset.bcat!;
+    document.querySelectorAll('.cat-chip').forEach((x) => { x.classList.remove('sel'); x.setAttribute('aria-pressed', 'false'); });
+    b.classList.add('sel'); b.setAttribute('aria-pressed', 'true'); apply();
+  }));
+</script>
+</Base>

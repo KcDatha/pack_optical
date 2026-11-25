@@ -295,3 +295,10 @@ section.block{padding:34px 0}
 .crumbs ol{list-style:none;display:flex;gap:6px;flex-wrap:wrap;padding:0;margin:0}.crumbs li+li::before{content:"›";margin-right:6px}
 .hub-link{font-weight:800;text-decoration:none}
 nav.main a{display:inline-flex;align-items:center;min-height:44px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.article{max-width:760px}
+.prose{font-size:17px;line-height:1.75}.prose h2{font-size:26px;margin:32px 0 10px}.prose h3{font-size:21px;margin:24px 0 8px}
+.prose p,.prose li{color:var(--ink)}.prose ul,.prose ol{padding-left:22px}.prose li{margin:6px 0}
+.prose img{max-width:100%;height:auto;border-radius:12px;margin:16px 0}.prose a{font-weight:700}
+.journal[hidden]{display:none}
+.err:not([hidden]){display:block}

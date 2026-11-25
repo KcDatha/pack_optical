@@ -1,0 +1,39 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { allPosts, fmtDate, relatedPosts } from '../../lib/blog';
+import { services } from '../../data/services';
+import { SITE } from '../../data/site';
+import { crumbs } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const posts = await allPosts();
+  return posts.map((p) => ({ params: { slug: p.data.slug }, props: { p, related: relatedPosts(posts, p) } }));
+}
+const { p, related } = Astro.props;
+const { Content } = await render(p);
+const d = p.data; const path = `/blog/${d.slug}/`;
+const svc = services.find((s) => s.slug === d.relatedService)!;
+const items = [{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog/' }, { name: d.title, href: path }];
+const schema = [{
+  '@context': 'https://schema.org', '@type': 'BlogPosting', headline: d.title, description: d.metaDescription,
+  datePublished: d.publishedAt.toISOString().slice(0, 10), dateModified: (d.updatedAt ?? d.publishedAt).toISOString().slice(0, 10),
+  author: { '@type': 'Organization', name: SITE.name }, publisher: { '@id': `${SITE.url}/#practice` },
+  mainEntityOfPage: new URL(path, SITE.url).href, articleSection: d.category,
+}, crumbs(items)];
+---
+<Base title={d.metaTitle} description={d.metaDescription} path={path} schema={schema} ogType="article">
+<div class="wrap"><Breadcrumbs items={items} />
+<article class="article">
+  <header class="page-head"><p class="eyebrow">{d.category}</p><h1>{d.title}</h1>
+    <p class="note">By {d.author} · <time datetime={d.publishedAt.toISOString().slice(0, 10)}>{fmtDate(d.publishedAt)}</time></p></header>
+  <div class="prose"><Content /></div>
+  <aside class="final-cta" style="margin:32px 0;text-align:left"><h2 style="font-size:26px">Questions about your eyes?</h2><p style="margin:0 0 16px">Learn more about <a href={`/services/${svc.slug}/`} style="color:#fff;font-weight:800">{svc.hubTitle}</a> or request an appointment. Call <a href={`tel:${SITE.phoneTel}`} style="color:#fff;font-weight:800">{SITE.phone}</a>.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-gold" href="/book/">BOOK APPOINTMENT</a><a class="btn btn-outline-w" href={`/services/${svc.slug}/`}>{svc.hubTitle}</a></div></aside>
+  <p class="note">This article is general information, not medical advice for any individual. See our <a href="/terms/">terms</a>.</p>
+</article>
+<section class="block"><h2 class="title">Related articles</h2>
+  <div class="post-grid">{related.map((r) => <article class="journal"><span class="pcat">{r.data.category}</span><h3>{r.data.title}</h3><p>{r.data.excerpt}</p><a href={`/blog/${r.data.slug}/`}>Read article →</a></article>)}</div></section>
+</div>
+</Base>

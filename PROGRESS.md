@@ -42,3 +42,38 @@ Also pending client confirmation: /privacy/ and /terms/ text (carried over from 
 - /visit/ map is a Google Maps iframe (lazy). No cookies set by us.
 - Dr. Presente still uses an initials placeholder (no photo in demo).
 - Quiz is a screening aid; page states it is not a diagnosis.
+
+## Day 3: Fri 2026-11-27 — Blog, booking, forms, chat, SEO inside the site (sprint)
+
+### Blog: 39 of 39 articles migrated with FULL text
+Source: the live WordPress REST API (public, client's own content). Imported by `scripts/import-posts.mjs` into `src/content/blog/*.md` (Astro content collection, fields match the Sanity Post schema: title, slug, excerpt, category, author, publishedAt, heroImage, targetKeyword, metaTitle, metaDescription, relatedService). Raw dump kept in `content/wp-posts-raw.json`.
+- Article length 400-1243 words (avg 514). Unmigrated slugs: none.
+- Findings: the demo's 39-post list was partly wrong. 5 demo titles (the "-2024", "-checklist", "-guide", "-parent-edition", "-overview" variants) do not exist on the live site; 5 live posts were missing from the demo (warning signs of diabetic retinopathy, blue light, vision therapy for adults, 4 things for the new year, can you reverse diabetic retinopathy). The site now matches the live 39. Dates are the live WordPress dates.
+- 6 inline images downloaded and converted to WebP in `public/blog/`. 2 inline images were dead (404) on the live site and were dropped (ipl-rf article, eye-exam-frequency article).
+- Internal links inside articles were rewritten to the new URLs; old booking-system links (4patientcare, PatientNow) now point to /book/.
+- Categories: the live site has 33 of 39 posts "Uncategorized". For a usable filter I assigned topical categories by keyword (Dry Eye, Eye Health, Eye Exams, Contacts & Myopia, Vision Therapy, Aesthetics). Author shows "Pack Optical team" (WordPress user names are staff logins). Both are easy to change in the .md files.
+- Article URLs are /blog/<slug>/ but the OLD site served them at /<slug>/. Redirects are required in Phase 10. `content/old-urls.csv` now has a new_url for all 60 old URLs.
+- Blog index has search and category filter (Playwright tested). Article template: author, date, related articles (3), booking CTA to the related service, BlogPosting + Breadcrumb schema.
+
+### Booking, forms, chat
+- /book/ is "Request an appointment" (client has not confirmed a booking system; open item). Fields: service, preferred day, preferred time, name, phone, optional email, new/existing. No health details. Sends to office@packoptical.com via Resend through a Cloudflare Pages Function (`functions/api/request.ts`), optional email copy to the patient, reference like PACK-ABC234, confirmation screen worded as a request, not a booking.
+- Contact form is on /patient-centre/ (`functions/api/contact.ts`), with auto reply to the patient if they give an email.
+- Turnstile on both forms, honeypot field, server-side validation.
+- Rule-based chat (`src/lib/chat.ts`), answers only from site content, emergency words route to the phone, fallback is the phone number. Desktop button plus mobile bar "Ask Pack".
+
+### !! NOT yet verified: real email delivery and live Turnstile
+No Resend key, mail domain, or Turnstile keys exist yet, so delivery to a test inbox could not be tested. What IS tested: handler logic with mocked Resend and Turnstile (validation, Turnstile block without token, failed Turnstile, honeypot, office email + auto reply payloads, misconfiguration, send failure) and the browser flow with a mocked API. Needed from Guru before Day 4 testing:
+1. Cloudflare Pages project (client owned). Env vars: RESEND_API_KEY, MAIL_TO, MAIL_FROM (a sending domain verified in Resend), TURNSTILE_SECRET, and build-time PUBLIC_TURNSTILE_SITEKEY.
+2. A test inbox. Until PUBLIC_TURNSTILE_SITEKEY is set, forms use Cloudflare's always-pass TEST key. That must never ship live.
+
+### SEO inside the site
+- Schema: Optometrist (home; aggregateRating deliberately omitted until the live rating is verified), Service + FAQPage + BreadcrumbList on services, FAQPage on /visit/, BlogPosting + BreadcrumbList on articles, BreadcrumbList on every non-home page.
+- sitemap-index.xml + sitemap-0.xml list all 61 built pages (lastmod set), robots.txt allows all and points to the sitemap, canonicals are self-referencing on https://packoptical.com (no www decision needed yet: Cloudflare redirect rule in Phase 10), OG/Twitter image on every page (default exam photo; per-page images are a post-share improvement).
+- `scripts/seo-check.mjs` (canonical, OG, JSON-LD validity and required fields, sitemap vs built pages, robots, NAP, tel links, noindex flag) passes: 0 failures on production build, and `EXPECT_NOINDEX=1` passes on a `PUBLIC_NOINDEX=1` staging build. Report: docs/seo-validation/report.md. NOT yet run through Google's Rich Results Test (needs a public URL; list in docs/seo-validation/README.md).
+- NAP fixes found by the script: header said "Oak Knoll Dr" (now Drive), Patient Centre said "Dr", form placeholder looked like a phone number.
+- docs/gbp-checklist.md and docs/citations.md written. The live Business Profile was not touched.
+- public/_headers added (nosniff, referrer, permissions, HSTS, frame, immutable cache for assets). CSP is a Day 4 item.
+
+### Daily Gate
+build clean, astro check 0, lint clean, Vitest 32/32, Playwright 154 pass (chromium + mobile; 2 mobile-only tests skipped on desktop), axe zero critical/serious on 13 templates in light and dark, link check 62 pages 0 broken, content audit all clear, seo-check 0 failures.
+Lighthouse mobile: home 99/97/100/100, dry eye 100/95/100/100, blog index 100/96/100/100, article 100/96/100/100, book 100/96/100/100 (perf/a11y/best practices/SEO). Day 4 gate needs Accessibility 95+ everywhere: dry eye is at 95, no margin.

@@ -12,7 +12,11 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "test:a11y": "playwright test tests/e2e/a11y.spec.ts",
-    "images": "node scripts/images.mjs"
+    "images": "node scripts/images.mjs",
+    "seo": "node scripts/seo-check.mjs",
+    "links": "node scripts/check-links.mjs",
+    "audit": "node scripts/audit-content.mjs",
+    "build:staging": "PUBLIC_NOINDEX=1 astro build"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",

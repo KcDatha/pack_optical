@@ -7,6 +7,7 @@ import ogDefault from '../assets/exam.webp';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileBar from '../components/MobileBar.astro';
+import Chat from '../components/Chat.astro';
 
 interface Props {
   title: string;
@@ -59,6 +60,7 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     <main id="top"><slot /></main>
     <Footer />
     <MobileBar />
+    <Chat />
     <script>
       // Highlight today's row and show open/closed status (America/Chicago).
       import { openStatus } from '../lib/hours';

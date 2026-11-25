@@ -1,5 +1,10 @@
-import demo from '../data/demo-data.json';
-export interface Post { title: string; date: Date; dateLabel: string; category: string; slug: string; excerpt: string; book: string }
-export const posts: Post[] = demo.POSTS.map((p) => ({
-  title: p.t, dateLabel: p.d, date: new Date(p.d + ' 12:00:00'), category: p.c, slug: p.u, excerpt: p.s, book: p.b,
-})).sort((a, b) => b.date.getTime() - a.date.getTime());
+import { getCollection, type CollectionEntry } from 'astro:content';
+export type Post = CollectionEntry<'blog'>;
+export async function allPosts(): Promise<Post[]> {
+  return (await getCollection('blog')).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+}
+export const fmtDate = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+export function relatedPosts(all: Post[], p: Post, n = 3): Post[] {
+  const score = (x: Post) => (x.data.category === p.data.category ? 2 : 0) + (x.data.relatedService === p.data.relatedService ? 1 : 0);
+  return all.filter((x) => x.id !== p.id).map((x) => ({ x, s: score(x) })).sort((a, b) => b.s - a.s || b.x.data.publishedAt.getTime() - a.x.data.publishedAt.getTime()).slice(0, n).map((r) => r.x);
+}
