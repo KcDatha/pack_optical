@@ -1,7 +1,7 @@
 ---
 import { CHIPS, GREETING } from '../lib/chat';
 ---
-<button class="chat-fab" id="chatFab" aria-label="Open chat" aria-expanded="false" aria-controls="chatPanel">Chat with Pack — book in seconds</button>
+<button class="chat-fab" id="chatFab" aria-label="Chat with Pack Optical" aria-expanded="false" aria-controls="chatPanel" title="Chat with us"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-3.6-.8L3 20.5l1.5-4.6A8.3 8.3 0 0 1 3 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5Z"/><circle cx="8.5" cy="11.5" r=".6" fill="currentColor"/><circle cx="12" cy="11.5" r=".6" fill="currentColor"/><circle cx="15.5" cy="11.5" r=".6" fill="currentColor"/></svg></button>
 <div class="chat-panel" id="chatPanel" data-greeting={GREETING} role="dialog" aria-label="Pack Optical chat assistant" aria-modal="false">
   <div class="chat-head"><div class="avatar" aria-hidden="true">P</div><div><b>Pack Assistant</b><span>Answers from this website, 24/7</span></div><button class="chat-close" id="chatClose" aria-label="Close chat">✕</button></div>
   <div class="chips" id="chatChips" role="group" aria-label="Quick actions">{CHIPS.map((c) => <button type="button" class="chip" data-flow={c.flow} style={c.flow === 'urgent' ? 'border-color:#B3261E;color:#B3261E' : ''}>{c.label}</button>)}</div>

@@ -123,3 +123,28 @@ Lighthouse mobile (1 run each), Performance / Accessibility / Best Practices / S
 - A first gate run scored /book/ SEO 92 and failed 52 Playwright tests. Cause: a leftover local dev server was still on port 4321, so the checks hit the dev server. The 92 was Lighthouse audit `link-text` (1 link, "Learn more" to docs.astro.build), injected only by the Astro dev toolbar; reproduced against the dev server. The production build contains zero docs.astro.build links.
 - Newer Astro runs `astro preview` and `astro dev` as background daemons, which made Playwright think its server exited. Tests and Lighthouse now use scripts/serve-dist.mjs.
 - Gap tasks 1 to 6 were verified together in the final gate run and committed in one commit, not task by task.
+
+## Utility bar removal 2026-11-25
+Removed the blue utility bar (address, hours, walk-ins line, Order Contacts, Patient Centre, phone) from src/components/Header.astro and every .util-* / .u-* style (grep for util-bar, util-in, u-hide, u-walkin, u-phone in src: 0 matches; none had to be kept).
+- Order Contacts now lives in: a new desktop header link (before the phone link, hidden below 1240px wide), the mobile menu (last entry, opens in a new tab with rel noopener), and the existing footer link. All three use SITE.contactsOrderUrl (no hard-coded copy).
+- Patient Centre: already linked in the footer, in the "Patients" column (not the "Explore" column, which was not changed). Still in the mobile menu. Not added to the main NAV.
+- Header height above the page content, from the production build (utility bar + header):
+  | | Before | After |
+  | --- | --- | --- |
+  | Desktop 1440px | 106 px (36 + 70) | 70 px |
+  | Mobile 390px | 128 px (59 + 69) | 69 px |
+- Facts, footer text, Visit page and schema were not edited.
+
+### Things I had to change beyond the bar (stated plainly)
+1. The new header link made the nav wrap to a second row at desktop widths (header 116 px). Fixed with header-only layout rules: header inner max-width 1320px, nav no-wrap with slightly tighter link padding, and the link hidden below 1240px. Baseline measurement: HEAD already wrapped to 116 px at 1100px wide and below; now 70 px at 1100px and above, 100 px at 1000px and below.
+2. The round chat button from the previous change had `display:grid` that overrode the "hidden on phones" rule, so on phones it covered the "Ask Pack" button and the iPhone test "mobile Ask Pack button opens chat" failed. Fixed (hidden on phones again).
+3. /book/ Performance flipped between 97 and 100 across runs. Cause (from the Lighthouse JSON): layout shift 0.11 when the web font swapped in and moved the H1. Fixed with size-matched fallback fonts (Manrope and Montserrat, ratios measured) and reserved space for the Turnstile widget. /book/ is now 100 with CLS 0.042 on 6 of 6 runs.
+
+### Tests
+Updated the NAP test (address, phone and hours now asserted in the footer). Added tests/e2e/header.spec.ts: no .util-bar in the DOM on home and a service page; desktop Order Contacts href equals SITE.contactsOrderUrl; header stays stuck on scroll; mobile menu opens, lists Patient Centre and Order Contacts (new tab), closes.
+
+### Gate (one run of scripts/gate.sh on the production build)
+build 62 pages, astro check 0 errors, lint clean, Vitest 37/37, Playwright 384 passed / 20 skipped by design (mobile-only and desktop-only tests), links 0 broken of 3,334, SEO suite 0 failures, content audit clear, facts check 0 issues, CSP clean. Lighthouse mobile, Performance / Accessibility / Best Practices / SEO: home 96/100/100/100, dry eye 100/100/100/100, aesthetics 100/100/100/100, blog index 100/100/100/100, book 100/100/100/100.
+
+### !! Bar NOT met: home Performance 96 (bar: no page below 98)
+Five more home runs on the final code: 97, 97, 97, 98, 98. LCP element is the hero image, LCP 2.4-2.6 s. This is not caused by this change: the previous commit (a5d1418) measured on the same machine at the same time gives 98, 96, 99, 98 (LCP 2.3-2.6 s), and earlier today the same page measured 98 with LCP 1.7-1.9 s, so this machine is currently slower or noisier. A single-run gate on home therefore cannot reliably clear 98 right now. Options for Guru: judge the bar on the median of 3 runs, or open a separate performance task (home CSS is 42 KB render-blocking, about 300 ms; hero image is already 43 KB).

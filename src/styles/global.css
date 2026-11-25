@@ -9,10 +9,6 @@ h1,h2,h3{font-family:Montserrat,Manrope,sans-serif;line-height:1.15;font-weight:
 img{max-width:100%;display:block}a{color:var(--teal)}
 button,select,summary,input,textarea{font:inherit}button,select,summary,input:not([type="checkbox"]){min-height:44px}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-.util-bar{background:var(--navy2);color:#C9D6E6;font-size:13px}
-.util-in{display:flex;gap:22px;align-items:center;padding:8px 20px;flex-wrap:wrap}
-.util-in a{color:#C9D6E6;text-decoration:none;font-weight:700}.util-in a:hover{color:var(--gold-bright)}
-.util-in .u-phone{margin-left:auto;color:var(--gold-bright);font-weight:800}
 header.site{position:sticky;top:0;z-index:50;background:var(--header-bg);border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(10,42,78,.06)}
 .header-in{display:flex;align-items:center;gap:14px;padding:12px 20px}
 .logo{line-height:1;text-decoration:none}.logo b{font-family:Montserrat,sans-serif;font-weight:900;font-size:27px;letter-spacing:.02em;display:block;color:var(--heading)}.logo b i{font-style:normal;color:var(--gold)}.logo small{font-size:10px;letter-spacing:.32em;font-weight:800;color:var(--teal)}
@@ -255,10 +251,9 @@ footer.site b{color:#fff}footer.site a{color:#B9C9DB}
 .mobile-bar a,.mobile-bar button{min-height:48px;border-radius:12px;font-weight:800;text-decoration:none;display:grid;place-items:center;border:0;cursor:pointer;font-size:14px}
 .mb-call{background:rgba(255,255,255,.12);color:#fff}.mb-book{background:var(--gold);color:#0A2A4E}.mb-chat{background:rgba(255,255,255,.12);color:#fff}
 @media(max-width:960px){
-nav.main,.phone-link,.u-hide{display:none}.menu-btn{display:grid;place-items:center}
+nav.main,.phone-link{display:none}.menu-btn{display:grid;place-items:center}
 .logo b{font-size:23px}.logo small{font-size:8.5px;letter-spacing:.18em;white-space:nowrap}
 .head-actions{gap:8px;margin-left:auto}.head-actions .btn{padding:10px 13px;font-size:12px;white-space:nowrap}
-.util-in{gap:12px;font-size:12px}
 .hero-in{grid-template-columns:1fr;padding:56px 20px 52px}.hero-card{align-self:start;max-width:480px}
 .trustbar-in{grid-template-columns:1fr 1fr}
 .card-grid,.team-grid,.brands-grid{grid-template-columns:1fr 1fr}
@@ -283,7 +278,6 @@ section.block{padding:34px 0}
 .hero-slide img{animation:none!important}
 .particles{display:none}
 .note a,.sub a,.lead a,p a:not(.btn){text-decoration:underline}
-.util-in a{display:inline-flex;align-items:center;min-height:32px;padding:0 4px}
 .hw{animation-duration:.4s}
 .review-banner{background:#FFF4D6;color:#5A4200;font-size:13px;font-weight:700;text-align:center;padding:8px 16px}
 .steps-list{list-style:none;counter-reset:s;padding:0;margin:0 0 18px;display:grid;gap:10px}
@@ -304,14 +298,26 @@ nav.main a{display:inline-flex;align-items:center;min-height:44px}
 .err:not([hidden]){display:block}
 footer.site .cols>div:not(:first-child) a{display:inline-block;padding:7px 0;min-height:28px}
 footer.site .cols>div:first-child a{display:inline-block;padding:4px 0}
-/* utility bar: keep one line on desktop */
-.util-in{flex-wrap:nowrap;gap:18px;padding-top:2px;padding-bottom:2px;white-space:nowrap}
-.util-in a.u-phone{margin-left:auto}
-@media(max-width:1240px){.util-in .u-walkin{display:none}}
-@media(max-width:960px){.util-in{flex-wrap:wrap;white-space:normal;gap:4px 12px}}
 .ba-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 18px}
 .ba-fig{margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
 .ba-fig img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
 .ba-fig figcaption{padding:10px 12px;font-size:14px;font-weight:700;color:var(--heading)}
 @media(max-width:700px){.ba-gallery{grid-template-columns:1fr}}
 .team-card.nophoto{display:flex;flex-direction:column;justify-content:center}
+/* chat: small round icon button */
+.chat-fab{width:56px;height:56px;min-height:56px;padding:0;right:20px;bottom:24px;display:grid;place-items:center;border-radius:50%;border-bottom-width:0;box-shadow:0 8px 24px rgba(10,42,78,.35),inset 0 -4px 0 var(--gold)}
+.chat-fab:hover{background:var(--teal)}
+.chat-panel{bottom:92px}
+/* header: room for the Order Contacts link now that the utility bar is gone */
+.header-in{max-width:1320px}
+nav.main{flex-wrap:nowrap}
+nav.main a{padding-left:8px;padding-right:8px;white-space:nowrap}
+.head-actions{flex-shrink:0}
+@media(max-width:1239px){[data-order-contacts]{display:none}}
+@media(max-width:960px){.chat-fab{display:none}}
+.cf-turnstile{min-height:65px;margin:8px 0}
+/* size-matched fallbacks so the web-font swap does not shift layout (ratios measured against the real fonts) */
+@font-face{font-family:"Manrope Fallback";src:local("Arial"),local("ArialMT"),local("Liberation Sans");size-adjust:102.7%}
+@font-face{font-family:"Montserrat Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold");font-weight:600 900;size-adjust:113%}
+body{font-family:Manrope,"Manrope Fallback",system-ui,sans-serif}
+h1,h2,h3{font-family:Montserrat,"Montserrat Fallback",Manrope,"Manrope Fallback",sans-serif}

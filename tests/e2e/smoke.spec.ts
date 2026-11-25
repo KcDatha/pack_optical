@@ -33,10 +33,12 @@ test('404 page', async ({ page }) => {
   await expect(page.locator('h1')).toHaveCount(1);
 });
 
-test('home: NAP and tel link', async ({ page }) => {
+test('home: NAP (address, phone, hours) in the footer, tel link visible', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('footer')).toContainText('1217 Oak Knoll Drive, Fort Worth, TX 76117');
-  await expect(page.locator('a[href="tel:+18178316141"]').first()).toBeVisible();
+  await expect(page.locator('footer')).toContainText('Mon/Tue/Thu 7:30 AM–5:30 PM · Wed 8:30 AM–5:30 PM · Fri–Sun Closed');
+  await expect(page.locator('footer a[href="tel:+18178316141"]')).toBeVisible();
+  await expect(page.locator('a[href="tel:+18178316141"]:visible').first()).toBeVisible();
 });
 
 test('mobile menu opens and closes by keyboard', async ({ page, isMobile }) => {
