@@ -321,3 +321,13 @@ nav.main a{padding-left:8px;padding-right:8px;white-space:nowrap}
 @font-face{font-family:"Montserrat Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold");font-weight:600 900;size-adjust:113%}
 body{font-family:Manrope,"Manrope Fallback",system-ui,sans-serif}
 h1,h2,h3{font-family:Montserrat,"Montserrat Fallback",Manrope,"Manrope Fallback",sans-serif}
+
+/* Logo lockup: wordmark and tagline share one width, with a gold rule between */
+.logo{display:inline-flex;flex-direction:column;align-items:stretch;gap:5px}
+.logo b{font-size:37px;letter-spacing:.04em;text-align:left;text-align-last:justify;line-height:.95}
+.logo small{display:block;font-size:9px;letter-spacing:.26em;font-weight:700;color:var(--teal);text-align:justify;text-align-last:justify;white-space:nowrap;padding-top:5px;border-top:2px solid var(--gold)}
+@media(max-width:960px){.logo b{font-size:29px}.logo small{font-size:7.5px;letter-spacing:.2em;padding-top:4px}}
+
+/* SVG logo */
+.logo{display:block}.logo img{display:block;height:48px;width:auto}
+@media(max-width:960px){.logo img{height:40px}}
