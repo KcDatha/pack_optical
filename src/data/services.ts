@@ -46,13 +46,13 @@ const DRAFT: Record<string, Draft> = {
     description: "Gentle children's eye exams in Fort Worth, TX, plus the $99 Packs Unlimited kids plan. Early checks, myopia options and honest answers. Call 817-831-6141.",
     keyword: "kids eye exam Fort Worth", bookLabel: "Book a kids' exam",
     moreWhat: [
-      'Children rarely complain about their vision because they assume everyone sees the way they do. That is why regular exams matter: a problem can affect reading, schoolwork and confidence for a long time before anyone realises its source.',
+      'Children rarely complain about their vision because they assume everyone sees the way they do. That is why regular exams matter: a problem can affect reading, schoolwork and confidence for a long time before anyone realizes its source.',
       'We keep exams calm and age appropriate. Younger children are tested with pictures and shapes rather than letters, and we work at your child\'s pace so the visit feels easy rather than clinical.',
     ],
     steps: [
       { h: 'A friendly start', p: 'We chat with you and your child about reading, screen time, headaches and anything you have noticed at home or school.' },
       { h: 'Vision and eye teaming', p: 'We check how clearly your child sees, how the eyes work together, and how well they track and focus.' },
-      { h: 'Eye health check', p: 'We look at the health of the eyes, check colour vision and depth perception, and screen for common childhood eye conditions.' },
+      { h: 'Eye health check', p: 'We look at the health of the eyes, check color vision and depth perception, and screen for common childhood eye conditions.' },
       { h: 'A clear explanation', p: 'You receive a plain-language report of what we found, what it means for school and play, and whether glasses or follow-up are needed.' },
     ],
     benefits: ['Problems found early, while they are easier to manage', 'A patient, child-friendly approach', 'Packs Unlimited: $99 a year for unlimited exams, $25 frame and lens sets and $25 replacements', 'Same-day pickup on glasses', 'Myopia management options discussed when relevant'],
@@ -124,7 +124,7 @@ const DRAFT: Record<string, Draft> = {
     steps: [
       { h: 'Symptom review', p: 'We ask when your eyes feel worst, how drops help, how much screen time you have and what medications or contact lenses you use.' },
       { h: 'Diagnostic testing', p: 'Tests such as LipiView, LipiScan, meibography, tear osmolarity, MMP-9 and Schirmer\'s test show how your tears and glands are working.' },
-      { h: 'Your personalised plan', p: 'We explain your type of dry eye and recommend care, which may include lid hygiene, warm compresses, prescription drops, plugs or in-office therapy.' },
+      { h: 'Your personalized plan', p: 'We explain your type of dry eye and recommend care, which may include lid hygiene, warm compresses, prescription drops, plugs or in-office therapy.' },
       { h: 'In-office therapy', p: 'When it is appropriate, our four-step gland plan combines IPL therapy, radiofrequency, manual expression and Regener-Eyes, with follow-up to track progress.' },
     ],
     benefits: ['Care aimed at the cause, not only the symptoms', 'Thorough diagnostic testing before any treatment', 'A range of options from simple home care to in-office therapy', 'Honest guidance: treatment only if it will genuinely help', 'Dry eye and med spa technology under one roof'],
@@ -167,7 +167,7 @@ const DRAFT: Record<string, Draft> = {
     keyword: 'emergency eye doctor Fort Worth', bookLabel: 'Call about an eye emergency', emergency: true,
     moreWhat: [
       'Some eye problems cannot wait. Sudden vision loss, a curtain or shadow over your sight, severe pain, trauma, a chemical splash and new flashes or floaters should all be treated as urgent.',
-      'Call us first. During office hours we prioritise emergencies, and a quick call lets the team prepare and tell you the fastest safe route to care.',
+      'Call us first. During office hours we prioritize emergencies, and a quick call lets the team prepare and tell you the fastest safe route to care.',
     ],
     steps: [
       { h: 'Call 817-831-6141', p: 'Tell us what has happened and when it started. We will advise whether to come straight in.' },
@@ -226,7 +226,7 @@ const DRAFT: Record<string, Draft> = {
     benefits: ['Early detection when treatment works best', 'Clear explanations of staging and what to expect', 'Ongoing monitoring close to home', 'Co-management with specialists when needed', 'Guidance on protecting your eyes long term'],
     faqs: [
       { q: 'What is glaucoma?', a: 'Glaucoma is a group of conditions that damage the optic nerve, often related to eye pressure. It is diagnosed with pressure checks, visual fields and nerve imaging, and managed with drops, laser or surgery referral.' },
-      { q: 'How do I know if I have cataracts?', a: 'Foggy vision, trouble driving at night, halos and faded colours are common signs. An exam confirms them, and surgery is timed to when vision interferes with daily life.' },
+      { q: 'How do I know if I have cataracts?', a: 'Foggy vision, trouble driving at night, halos and faded colors are common signs. An exam confirms them, and surgery is timed to when vision interferes with daily life.' },
       { q: 'What is macular degeneration?', a: 'It affects the central part of the retina. Signs include blurry central vision and straight lines that look wavy. There are dry and wet forms, managed differently.' },
       { q: 'Who is at higher risk?', a: 'Age and family history raise risk for several conditions, and diabetes, smoking, UV exposure and steroid use are also factors. Your doctor can explain which apply to you.' },
       { q: 'Can eye disease be prevented?', a: 'Not always, but UV protection, not smoking, a healthy diet and regular exams all help protect your eyes and catch changes early.' },
@@ -267,7 +267,7 @@ const DRAFT: Record<string, Draft> = {
     ],
     steps: [
       { h: 'Consultation', p: 'You tell us your goals, we assess your skin and give honest advice about what will and will not help.' },
-      { h: 'Personalised plan', p: 'We write down your plan and give you an exact quote before any treatment.' },
+      { h: 'Personalized plan', p: 'We write down your plan and give you an exact quote before any treatment.' },
       { h: 'Treatment', p: 'Your treatment is performed by the medical team using technology matched to your plan.' },
       { h: 'Follow-up and aftercare', p: 'We check in, maintain your results and give you aftercare guidance to protect them.' },
     ],
@@ -275,7 +275,7 @@ const DRAFT: Record<string, Draft> = {
     faqs: [
       { q: 'What is Morpheus8?', a: 'Morpheus8 combines microneedling with radiofrequency to treat texture and laxity on the face, jawline and neck. A plan is typically three sessions, 4 to 6 weeks apart, with best results about three months after the last one.' },
       { q: 'Do I need a consultation first?', a: 'Yes. Every aesthetics plan starts with a consultation, an honest assessment and an exact quote before any treatment.' },
-      { q: 'How should I care for my skin afterward?', a: 'Avoid sun, heat and sauna for 48 to 72 hours, keep your skin moisturised and use SPF. Full guidance is given at your appointment.' },
+      { q: 'How should I care for my skin afterward?', a: 'Avoid sun, heat and sauna for 48 to 72 hours, keep your skin moisturized and use SPF. Full guidance is given at your appointment.' },
       { q: 'Can I book eye care and aesthetics together?', a: 'Yes. You can request both on the same visit, or call us and we will arrange them for you.' },
       { q: 'Are aesthetics covered by insurance?', a: 'No. Aesthetics are self-pay, with an exact written quote before treatment.' },
     ],

@@ -21,7 +21,7 @@ home, practice, services, service (11 detail pages), eyewear, blog, patient, vis
 - H1: Children's Eye Exams in Fort Worth
 - Eyebrow: Eye Exams · Kids
 - Intro: 80% of learning is visual — and 1 in 4 school-age children has a vision problem. Gentle exams, honest answers, and a kids' plan that covers breakages.
-- What: We follow the AOA schedule: first exam at 6–12 months, again at 3–5 years, then annually before 1st grade and every year after. We test visual acuity, eye alignment, tracking & focusing, colour vision, depth perception and eye health.
+- What: We follow the AOA schedule: first exam at 6–12 months, again at 3–5 years, then annually before 1st grade and every year after. We test visual acuity, eye alignment, tracking & focusing, color vision, depth perception and eye health.
 - Who: Babies 6–12 months (first check) | Children 3–5 and school-age, annually | Kids who squint, sit close, lose their place reading or rub their eyes | Families who want myopia control options
 - Expect: A patient, gentle exam at your child's pace | Clear report of what we found and what it means | Packs Unlimited: $99/year — unlimited exams, $25 frame & lens sets, $25 replacements, same-day pickup | Myopia management: Ortho-K, atropine, multifocal contacts and MiSight; vision therapy referrals
 - Accordion "Signs to book sooner": Squinting · Headaches · Sitting close to the TV · Losing place while reading · Rubbing eyes · Avoiding reading.
@@ -73,7 +73,7 @@ home, practice, services, service (11 detail pages), eyewear, blog, patient, vis
 - Intro: Eye injuries, chemical exposure, sudden vision loss, flashes & floaters, pain or infection — call immediately. Same-day appointments, walk-ins welcome.
 - What: We treat corneal abrasions, foreign bodies, infections (pink eye), uveitis / iritis, retinal detachment symptoms and subconjunctival hemorrhage. Don't rub the eye, don't remove embedded objects, and flush chemicals with water for 15 minutes while you call.
 - Who: Sudden vision loss or a curtain over vision | Severe eye pain or trauma | Flashes, new floaters or bleeding | Chemical splash or something stuck in the eye
-- Expect: Call 817-831-6141 first — we prioritise emergencies Mon–Thu | Same-day appointments and walk-ins when something can't wait | If we're closed (Fri–Sun) and it's severe: urgent care or ER, and ask them to contact us
+- Expect: Call 817-831-6141 first — we prioritize emergencies Mon–Thu | Same-day appointments and walk-ins when something can't wait | If we're closed (Fri–Sun) and it's severe: urgent care or ER, and ask them to contact us
 - Accordion "First aid while you call": Don't rub · Don't remove embedded objects · Flush chemicals 15 minutes with clean water · Bring any chemical container or object details with you.
 - Related: Eye disease care=eye-disease, Visit & hours=visit
 
@@ -91,7 +91,7 @@ home, practice, services, service (11 detail pages), eyewear, blog, patient, vis
 - H1: Eye Disease Diagnosis & Management in Fort Worth
 - Eyebrow: Medical Eye Care
 - Intro: Early detection saves sight. Glaucoma, cataracts and macular degeneration are diagnosed, staged and managed here — with specialist co-management when you need it.
-- What: Glaucoma (open-angle, angle-closure, normal-tension, congenital, secondary) is diagnosed with pressure, visual field and optic nerve imaging and treated with drops, laser or surgery referral. Cataracts cause foggy vision, night difficulty, halos and faded colours; surgery is timed to when vision interferes with daily life. Macular degeneration (dry vs wet AMD) shows as blurry central vision and wavy lines; AREDS vitamins help dry AMD, anti-VEGF injections treat wet AMD via specialists.
+- What: Glaucoma (open-angle, angle-closure, normal-tension, congenital, secondary) is diagnosed with pressure, visual field and optic nerve imaging and treated with drops, laser or surgery referral. Cataracts cause foggy vision, night difficulty, halos and faded colors; surgery is timed to when vision interferes with daily life. Macular degeneration (dry vs wet AMD) shows as blurry central vision and wavy lines; AREDS vitamins help dry AMD, anti-VEGF injections treat wet AMD via specialists.
 - Who: Family history of glaucoma or AMD | Age, diabetes, high eye pressure or steroid use | Foggy vision, halos or night-driving trouble | Straight lines looking wavy, or dark central spots
 - Expect: Pressure, visual field and optic nerve imaging for glaucoma | Cataract assessment and honest surgery timing | AMD monitoring with imaging; specialist co-management | Prevention guidance: UV protection, no smoking, healthy diet
 - Accordion "Risk factors at a glance": Glaucoma: age, family history, ethnicity, high eye pressure, diabetes, steroid use. Cataracts: age, diabetes, smoking, UV, steroids. AMD: age, family history, smoking.
@@ -129,8 +129,8 @@ home, practice, services, service (11 detail pages), eyewear, blog, patient, vis
 - Guess: Bold, fashion-forward styles with a youthful edge.
 - GX by Gwen Stefani: Playful, expressive designs with pop-star flair.
 - Hackett: Refined British menswear styling in eyewear form.
-- Kate Spade: Cheerful colour, patterns and feminine detail.
-- Kliik: Canadian-designed, lightweight frames with subtle colour.
+- Kate Spade: Cheerful color, patterns and feminine detail.
+- Kliik: Canadian-designed, lightweight frames with subtle color.
 - Michael Kors: Jet-set glamour — tortoise, gold and oversized shapes.
 - Oakley: Sport performance frames and lenses, prescription-ready.
 - Prada: High-fashion Italian statement frames.
@@ -215,5 +215,5 @@ Demo 5-step flow, 7 eye + 6 spa services. External: Weave (eye), Moxie (aestheti
 - [Uncategorized] Vision Problems & Stroke Recovery — Overview (Aug 9, 2023) /blog/vision-problems-stroke-recovery-overview/ — book:exam
 - [Uncategorized] March Is Workplace Eye Wellness Month (Mar 8, 2023) /blog/march-is-workplace-eye-wellness-month/ — book:exam
 
-## Images (14 embedded, in assets-source/, optimised copies in src/assets/)
+## Images (14 embedded, in assets-source/, optimized copies in src/assets/)
 img01-03 hero slides; img04 exam; img05 dry eye teaser; img06 med spa teaser; img07/08 Morpheus after/before (filter demo, not a real patient); img09 team; img10 Alisha; img11 Yanet; img12 Maddy; img13 eyewear; img14 building

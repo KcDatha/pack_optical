@@ -2,15 +2,12 @@
 import { CHIPS, GREETING } from '../lib/chat';
 ---
 <button class="chat-fab" id="chatFab" aria-label="Open chat" aria-expanded="false" aria-controls="chatPanel">Chat with Pack — book in seconds</button>
-<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Pack Optical chat assistant" aria-modal="false">
+<div class="chat-panel" id="chatPanel" data-greeting={GREETING} role="dialog" aria-label="Pack Optical chat assistant" aria-modal="false">
   <div class="chat-head"><div class="avatar" aria-hidden="true">P</div><div><b>Pack Assistant</b><span>Answers from this website, 24/7</span></div><button class="chat-close" id="chatClose" aria-label="Close chat">✕</button></div>
   <div class="chips" id="chatChips" role="group" aria-label="Quick actions">{CHIPS.map((c) => <button type="button" class="chip" data-flow={c.flow} style={c.flow === 'urgent' ? 'border-color:#B3261E;color:#B3261E' : ''}>{c.label}</button>)}</div>
   <div class="chat-msgs" id="chatMsgs" role="log" aria-live="polite"></div>
   <form class="chat-input" id="chatForm"><label class="sr-only" for="chatText">Type your message</label><input id="chatText" placeholder="Book an exam, VSP?, glasses ready?" autocomplete="off" /><button type="submit">Send</button></form>
 </div>
-<script define:vars={{ GREETING }}>
-  window.__chatGreeting = GREETING;
-</script>
 <script>
   import { reply } from '../lib/chat';
   const panel = document.getElementById('chatPanel')!, fab = document.getElementById('chatFab')!, msgs = document.getElementById('chatMsgs')!;
@@ -23,7 +20,7 @@ import { CHIPS, GREETING } from '../lib/chat';
   }
   function open(from?: HTMLElement) {
     opener = from ?? fab; panel.classList.add('open'); fab.setAttribute('aria-expanded', 'true');
-    if (!msgs.childElementCount) add('bot', (window as unknown as { __chatGreeting: string }).__chatGreeting);
+    if (!msgs.childElementCount) add('bot', panel.dataset.greeting!);
     input.focus();
   }
   function close() { panel.classList.remove('open'); fab.setAttribute('aria-expanded', 'false'); opener?.focus(); }

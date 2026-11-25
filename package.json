@@ -16,7 +16,12 @@
     "seo": "node scripts/seo-check.mjs",
     "links": "node scripts/check-links.mjs",
     "audit": "node scripts/audit-content.mjs",
-    "build:staging": "PUBLIC_NOINDEX=1 astro build"
+    "build:staging": "PUBLIC_NOINDEX=1 astro build && node scripts/staging-post.mjs",
+    "check:staging": "node scripts/staging-check.mjs",
+    "deploy:staging": "npm run build:staging && npm run check:staging && wrangler pages deploy dist --project-name=$CF_PAGES_PROJECT --branch=staging",
+    "check:csp": "node scripts/csp-check.mjs",
+    "facts": "node scripts/facts-check.mjs",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",
@@ -35,6 +40,7 @@
     "eslint-plugin-astro": "^3.2.1",
     "tailwindcss": "^4.3.5",
     "typescript-eslint": "^8.74.0",
-    "vitest": "^5.1.1"
+    "vitest": "^5.1.1",
+    "wrangler": "^4.168.0"
   }
 }

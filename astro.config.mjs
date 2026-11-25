@@ -21,5 +21,6 @@ export default defineConfig({
       return item;
     },
   })],
-  vite: { plugins: [tailwindcss()] },
+  // assetsInlineLimit 0 keeps every script external so the CSP can forbid inline scripts.
+  vite: { plugins: [tailwindcss()], build: { assetsInlineLimit: 0 } },
 });

@@ -23,7 +23,7 @@ const PLANS: [RegExp, string][] = [[/\bvsp\b/, 'vsp'], [/eyemed/, 'eyemed'], [/b
 export function reply(input: string, now: Date = new Date()): Reply {
   const t = input.toLowerCase().trim();
   if (/(emergenc|urgent|sudden|pain|injur|chemical|curtain|flash|can't see|cannot see|bleeding)/.test(t) || t === 'urgent')
-    return { text: `That could be an eye emergency. Please call us now on ${SITE.phone}. We prioritise emergencies Monday to Thursday. If we are closed (Friday to Sunday) and it is severe, go to urgent care or the ER.`, links: [tel, { label: 'Emergency eye care', href: '/services/emergency-eye-care/' }] };
+    return { text: `That could be an eye emergency. Please call us now on ${SITE.phone}. We prioritize emergencies Monday to Thursday. If we are closed (Friday to Sunday) and it is severe, go to urgent care or the ER.`, links: [tel, { label: 'Emergency eye care', href: '/services/emergency-eye-care/' }] };
   for (const [re, id] of PLANS) if (re.test(t)) return { text: insuranceAnswer(id)!, links: [{ label: 'Insurance checker', href: '/patient-centre/#insurance' }, tel] };
   if (/(insur|plan|cover|copay)/.test(t) || t === 'insurance')
     return { text: 'We work with most major vision and medical plans: Aetna, BCBS of Texas, Cigna, Community Eye Care, Davis Vision, EyeMed, Medicare, Medicaid (20 and under), Superior Vision, Tricare, United Healthcare and VSP. Tell me your plan, or use the checker.', links: [{ label: 'Insurance checker', href: '/patient-centre/#insurance' }] };

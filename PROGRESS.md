@@ -77,3 +77,19 @@ No Resend key, mail domain, or Turnstile keys exist yet, so delivery to a test i
 ### Daily Gate
 build clean, astro check 0, lint clean, Vitest 32/32, Playwright 154 pass (chromium + mobile; 2 mobile-only tests skipped on desktop), axe zero critical/serious on 13 templates in light and dark, link check 62 pages 0 broken, content audit all clear, seo-check 0 failures.
 Lighthouse mobile: home 99/97/100/100, dry eye 100/95/100/100, blog index 100/96/100/100, article 100/96/100/100, book 100/96/100/100 (perf/a11y/best practices/SEO). Day 4 gate needs Accessibility 95+ everywhere: dry eye is at 95, no margin.
+
+## Day 4: Sat 2026-11-28 — Essential testing gate and staging prep (sprint)
+Full results in docs/qa-log.md. Summary: lint, astro check, 32 unit tests, 320 Playwright tests (Chromium, WebKit, Pixel 7, iPhone 14), axe 0 critical/serious on 13 templates in light and dark, keyboard pass, Lighthouse CI median 100/100/100/100 on home, dry eye, blog index and an article, 0 broken links of 3,396, SEO suite 0 failures, facts check 0 issues, npm audit 0, CSP clean on 7 pages. All pass.
+
+Fixes made by the gate: footer link tap targets (accessibility), moved font loading and the chat greeting off inline scripts so a strict CSP works (no `unsafe-inline` for scripts), US spellings, added CSP + security headers (`public/_headers`), staging build with noindex meta and `X-Robots-Tag` header (`npm run build:staging`, `npm run check:staging`), `deploy:staging` script, Lighthouse CI config with the 95/95/95/100 gate.
+
+### NOT DONE, blocked outside the codebase (so the share has NOT happened)
+1. Firefox could not be tested on this Mac (Playwright's Firefox does not launch on macOS 27.2). WebKit and Chromium engines pass.
+2. Staging was NOT deployed. wrangler is not logged in, and there is no client-owned Cloudflare Pages project or credentials. Steps: docs/staging-deploy.md. I did not use a temporary/anonymous Cloudflare account because that would publish the client site outside the client's account.
+3. Real email delivery and live Turnstile are untested (no Resend/Turnstile credentials). Forms use the Cloudflare TEST site key until PUBLIC_TURNSTILE_SITEKEY is set.
+4. Response headers on the real pages.dev URL, Rich Results Test, real-phone check and Guru's walkthrough all need the live staging URL.
+5. Staging URL and share date: to be recorded here once deployed.
+
+### Deferred to the post-share list
+Sanity CMS switch-on, doctor approval of the 11 service pages (banner removal), final privacy/terms text, area pages, per-page OG images, /review/ page, Phase 10 launch (301 redirects from content/old-urls.csv, DNS, Search Console, Business Profile), Firefox test pass, Dr. Presente photo, aggregateRating in schema after live verification, GA4.
+Client message and open items note: docs/open-items-for-client.md (share message text is in 4_DAY_SPRINT.md).
